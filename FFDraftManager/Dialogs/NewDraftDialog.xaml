@@ -1,0 +1,513 @@
+﻿<Window 
+    x:Class="FFDraftManager.Dialogs.NewDraftDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="clr-namespace:FFDraftManager.Models"
+    xmlns:services="clr-namespace:FFDraftManager.Services"
+    Title="Start New Draft" 
+    Height="560" 
+    Width="625">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="LightSteelBlue" Offset="0.0" />
+            <GradientStop Color="SteelBlue" Offset="1.5" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <BooleanToVisibilityConverter
+            x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    <StackPanel>
+        <Grid
+            Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="125"/>
+                <ColumnDefinition
+                    Width="50"/>
+                <ColumnDefinition
+                    Width="125"/>
+                <ColumnDefinition
+                    Width="200"/>
+                <ColumnDefinition
+                    Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!-- Number of Teams -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="0"
+                Content="Number of Teams:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="0"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfTeams, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Time Per Pick-->
+            <Label
+                Grid.Column="0"
+                Grid.Row="1"
+                Content="Time Per Pick (sec):"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="1"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=SecondsPerPick, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of QBs -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="2"
+                Content="QB:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="2"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfQbs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of RBs -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="3"
+                Content="RB:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="3"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfRbs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of WRs -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="4"
+                Content="WR:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="4"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfWrs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of TEs -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="5"
+                Content="TE:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="5"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfTes, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of PKs -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="6"
+                Content="PK:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="6"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfPks, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of DEFs -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="7"
+                Content="DST:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="7"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfDefs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of WR/RBs -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="8"
+                Content="W/R:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="8"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfWrRbs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of WR/RB/TEs -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="9"
+                Content="W/R/T:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="9"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfWrRbTes, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of QB/WR/RB/TEs -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="9"
+                Content="Q/W/R/T:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="9"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfQbWrRbTes, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Number of Bench Players -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="10"
+                Content="Bench:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                Grid.Row="10"
+                Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfBenchPlayers, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <!-- Use Pick Timer -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="11"
+                Content="Use Pick Timer:"
+                HorizontalAlignment="Right">
+            </Label>
+            <CheckBox
+                Grid.Column="1"
+                Grid.Row="11"
+                IsChecked="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=PicksTimed, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,7,0,10">
+            </CheckBox>
+            <!-- Is Draft PPR -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="12"
+                Content="Is PPR Draft:"
+                HorizontalAlignment="Right">
+            </Label>
+            <CheckBox
+                Grid.Column="1"
+                Grid.Row="12"
+                IsChecked="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=IsPPR, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                Margin="10,7,0,10">
+            </CheckBox>
+
+
+            <!-- Team 1 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="0"
+                Content="Team 1:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="0"
+                Text="{Binding Path=Team1Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="0"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam1User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 2 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="1"
+                Content="Team 2:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="1"
+                Text="{Binding Path=Team2Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="1"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam2User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 3 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="2"
+                Content="Team 3:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="2"
+                Text="{Binding Path=Team3Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="2"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam3User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 4 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="3"
+                Content="Team 4:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="3"
+                Text="{Binding Path=Team4Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="3"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam4User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 5 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="4"
+                Content="Team 5:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="4"
+                Text="{Binding Path=Team5Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="4"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam5User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 6 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="5"
+                Content="Team 6:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="5"
+                Text="{Binding Path=Team6Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="5"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam6User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 7 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="6"
+                Content="Team 7:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="6"
+                Text="{Binding Path=Team7Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="6"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam7User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 8 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="7"
+                Content="Team 8:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="7"
+                Text="{Binding Path=Team8Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="7"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam8User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 9 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="8"
+                Content="Team 9:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="8"
+                Text="{Binding Path=Team9Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="8"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam9User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 10 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="9"
+                Content="Team 10:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="9"
+                Text="{Binding Path=Team10Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="9"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam10User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 11 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="10"
+                Content="Team 11:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="10"
+                Text="{Binding Path=Team11Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="10"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam11User}"
+                GroupName="UserGroup">
+            </RadioButton>
+            <!-- Team 12 -->
+            <Label
+                Grid.Column="2"
+                Grid.Row="11"
+                Content="Team 12:"
+                HorizontalAlignment="Right">
+            </Label>
+            <TextBox
+                Grid.Column="3"
+                Grid.Row="11"
+                Text="{Binding Path=Team12Name}"
+                Margin="10,0,0,10">
+            </TextBox>
+            <RadioButton
+                Grid.Column="4"
+                Grid.Row="11"
+                Margin="10,3,0,10"
+                Content="User"
+                IsChecked="{Binding Path=IsTeam12User}"
+                GroupName="UserGroup">
+            </RadioButton>
+        </Grid>
+        <StackPanel
+            HorizontalAlignment="Right"
+            Orientation="Horizontal"
+            Margin="25,10,25,10">
+            <Button 
+                Width="120"
+                Height="30"
+                Margin="10,0,10,0"
+                Content="Initialize Draft"
+                Command="{Binding Path=InitializeDraftCommand}">
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

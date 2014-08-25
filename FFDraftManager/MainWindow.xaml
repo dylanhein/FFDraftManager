@@ -1,0 +1,162 @@
+﻿<Window x:Class="FFDraftManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:tabs="clr-namespace:FFDraftManager.Tabs"
+        xmlns:converters="clr-namespace:FFDraftManager.Converters"
+        Title="Offline Fantasy Football Draft Manager" 
+        Height="600" 
+        Width="950"
+        WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="LightSteelBlue" Offset="0.0" />
+            <GradientStop Color="SteelBlue" Offset="1.5" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <converters:NegativeVisibilityConverter
+            x:Key="NegativeVisibilityConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="Auto"/>
+            <RowDefinition
+                Height="Auto"/>
+            <RowDefinition
+                Height="*" />
+        </Grid.RowDefinitions>
+        <!-- Menu -->
+        <StackPanel
+            Grid.Row="0"
+            HorizontalAlignment="Stretch">
+            <Menu
+                BorderBrush="Black"
+                BorderThickness="0,0,0,1">
+                <Menu.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="AliceBlue" Offset="0.0" />
+                        <GradientStop Color="LightSteelBlue" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Menu.Background>
+                <!-- File Menu -->
+                <MenuItem 
+                    Header="_File"
+                    Padding="5,2,5,3">
+                    <MenuItem 
+                        Header="_New Draft" 
+                        Padding="5,2,5,3"/>
+                    <MenuItem 
+                        Header="_Save Draft Results"
+                        Padding="5,2,5,3"/>
+                    <MenuItem 
+                        Header="_Exit"
+                        Padding="5,2,5,3"/>
+                </MenuItem>
+                <!-- Edit Menu -->
+                <MenuItem 
+                    Header="_Edit"
+                    Padding="5,2,5,3">
+                    <MenuItem 
+                        Header="_Undo Last Draft Pick"
+                        Padding="5,2,5,3"/>
+                    <MenuItem 
+                        Header="_Change Draft Pick"
+                        Padding="5,2,5,3"/>
+                </MenuItem>
+                <!-- View Menu -->
+                <MenuItem 
+                    Header="_View"
+                    Padding="5,2,5,3">
+                    <MenuItem 
+                        Header="_Dashboard"
+                        Padding="5,2,5,3"/>
+                    <MenuItem 
+                        Header="Draft _Board"
+                        Padding="5,2,5,3"/>
+                    <MenuItem 
+                        Header="_Available Players"
+                        Padding="5,2,5,3"/>
+                </MenuItem>
+                <!-- Help Menu -->
+                <MenuItem 
+                    Header="_Help"
+                    Padding="5,2,5,3">
+                    <MenuItem 
+                        Header="_About"
+                        Padding="5,2,5,3"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <!-- Draft Status Panel-->
+        <Border            
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="10,20,10,10"
+            BorderThickness="1"
+            BorderBrush="Black">
+            <StackPanel
+                Height="125"
+                HorizontalAlignment="Stretch">
+                <StackPanel.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="AliceBlue" Offset="0.0" />
+                        <GradientStop Color="LightSteelBlue" Offset="0.5" />
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <!-- New Draft Button -->
+                <Button
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Height="125"
+                    Background="Transparent"
+                    Visibility="{Binding Path=DraftInProgress, Converter={StaticResource NegativeVisibilityConverter}, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Command="{Binding Path=StartNewDraftCommand}">
+                    <Button.Content>
+                        <TextBlock
+                            TextAlignment="Center"
+                            FontSize="48"
+                            FontWeight="Bold"
+                            Text="Start New Draft">
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </Border>
+        <!-- Main Tab Control -->            
+        <TabControl
+            Grid.Row="2"
+            Margin="10"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <TabControl.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FFF9F9F9" Offset="0.0" />
+                    <GradientStop Color="AliceBlue" Offset="0.1" />
+                    <GradientStop Color="LightSteelBlue" Offset="0.5" />
+                </LinearGradientBrush>
+            </TabControl.Background>
+            <!-- The Dashboard Tab -->
+            <TabItem
+                Header="Dashboard"
+                x:Name="DashboardTab"
+                Background="LightSteelBlue">
+                <tabs:DashboardView />
+            </TabItem>
+            <!-- The Draft Board Tab -->
+            <TabItem
+                Header="Draft Board"
+                x:Name="DraftBoardTab"
+                Background="LightSteelBlue">
+                <tabs:DraftBoardView />
+            </TabItem>
+            <!-- The Available Players Tab -->
+            <TabItem
+                Header="Available Players"
+                x:Name="AvailablePlayersTab"
+                Background="LightSteelBlue">
+                <tabs:AvailablePlayersView />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
