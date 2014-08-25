@@ -41,3 +41,28 @@ C:\Users\Dylan\Documents\Visual Studio 2010\Projects\FFDraftManager\FFDraftManag
 C:\Users\Dylan\Documents\Visual Studio 2010\Projects\FFDraftManager\FFDraftManager\FFDraftManager\obj\x86\Debug\Dialogs\NewDraftDialog.g.cs
 C:\Users\Dylan\Documents\Visual Studio 2010\Projects\FFDraftManager\FFDraftManager\FFDraftManager\obj\x86\Debug\FFDraftManager.csproj.GenerateResource.Cache
 C:\Users\Dylan\Documents\Visual Studio 2010\Projects\FFDraftManager\FFDraftManager\FFDraftManager\bin\Debug\FFDraftManager.exe.config
+C:\Codebase\Github\FFDraftManager\FFDraftManager\bin\Debug\FFDraftManager.exe.config
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\FFDraftManager.exe
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\FFDraftManager.pdb
+C:\Codebase\Github\FFDraftManager\FFDraftManager\bin\Debug\FFDraftManager.exe
+C:\Codebase\Github\FFDraftManager\FFDraftManager\bin\Debug\FFDraftManager.pdb
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\Tabs\DashboardView.baml
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\Dialogs\NewDraftDialog.g.cs
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\MainWindow.g.cs
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\Tabs\AvailablePlayersView.g.cs
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\Tabs\DashboardView.g.cs
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\Tabs\DraftBoardView.g.cs
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\App.g.cs
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\FFDraftManager_MarkupCompile.cache
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\FFDraftManager_MarkupCompile.lref
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\Dialogs\NewDraftDialog.baml
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\MainWindow.baml
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\Tabs\AvailablePlayersView.baml
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\Tabs\DraftBoardView.baml
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\FFDraftManager.g.resources
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\FFDraftManager.Properties.Resources.resources
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\FFDraftManager.csproj.GenerateResource.Cache
+C:\Codebase\Github\FFDraftManager\FFDraftManager\bin\Debug\Assets\PprRankings2014.csv
+C:\Codebase\Github\FFDraftManager\FFDraftManager\bin\Debug\Assets\StandardRankings2014.csv
+C:\Codebase\Github\FFDraftManager\FFDraftManager\obj\x86\Debug\FFDraftManager_Content.g.cs
