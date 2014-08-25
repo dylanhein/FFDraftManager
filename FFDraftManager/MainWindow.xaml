@@ -44,7 +44,8 @@
                     Header="_File"
                     Padding="5,2,5,3">
                     <MenuItem 
-                        Header="_New Draft" 
+                        Header="_New Draft"
+                        Command="{Binding Path=StartNewDraftCommand}"
                         Padding="5,2,5,3"/>
                     <MenuItem 
                         Header="_Save Draft Results"
