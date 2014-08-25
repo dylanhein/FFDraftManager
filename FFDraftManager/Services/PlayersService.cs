@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using FFDraftManager.Models;
 
@@ -10,8 +11,11 @@ namespace FFDraftManager.Services {
 
         #region Private Data Members
 
-        private static readonly string standardPlayersFilePath = @"C:\Users\Dylan\Documents\Visual Studio 2010\Projects\FFDraftManager\FFDraftManager\FFDraftManager\StandardRankings2014.csv";
-        private static readonly string pprPlayersFilePath = @"C:\Users\Dylan\Documents\Visual Studio 2010\Projects\FFDraftManager\FFDraftManager\FFDraftManager\PprRankings2014.csv";
+        private static readonly string assetsFolderName = "Assets";
+        private static readonly string standardPlayersFileName = "StandardRankings2014.csv";
+        private static readonly string pprPlayersFileName = "PprRankings2014.csv";
+        private static readonly string standardPlayersFilePath = Path.Combine(Directory.GetCurrentDirectory().ToString(), assetsFolderName, standardPlayersFileName);
+        private static readonly string pprPlayersFilePath = Path.Combine(Directory.GetCurrentDirectory().ToString(), assetsFolderName, pprPlayersFileName);
         private static volatile PlayersService instance;
         private static object syncRoot = new Object();
 
@@ -257,7 +261,7 @@ namespace FFDraftManager.Services {
             int qbCount = 0, rbCount = 0, wrCount = 0, teCount = 0, dstCount = 0, kCount = 0;
             ObservableCollection<Player> playerList = new ObservableCollection<Player>();
 
-            // Read the file and display it line by line.
+            // Read the file and parse it line by line.
             System.IO.StreamReader file = new System.IO.StreamReader(filePath);
             while ((line = file.ReadLine()) != null) {
                 if (string.IsNullOrWhiteSpace(line)) continue;
