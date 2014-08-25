@@ -18,7 +18,7 @@ namespace FFDraftManager {
     /// </summary>
     public partial class MainWindow : Window {
         public MainWindow() {
-            DataContext = new MainWindowViewModel();
+            DataContext = new MainWindowViewModel(this);
             InitializeComponent();
         }
     }

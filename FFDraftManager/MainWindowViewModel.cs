@@ -22,6 +22,7 @@ namespace FFDraftManager {
 
         #region Private Data Members
 
+        private Window window;
         private bool draftInProgress;
         private bool draftInitialized;
         private ICommand startNewDraftCommand;
@@ -64,8 +65,8 @@ namespace FFDraftManager {
 
         #region Constructors
 
-        public MainWindowViewModel() {
-
+        public MainWindowViewModel(Window window) {
+            this.window = window;
         }
 
         #endregion
