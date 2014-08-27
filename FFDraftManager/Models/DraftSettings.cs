@@ -8,7 +8,7 @@ namespace FFDraftManager.Models {
     /// <summary>
     /// The settings for a draft.
     /// </summary>
-    public class DraftSettings {
+    public class DraftSettings : INotifyPropertyChanged {
 
         #region Private Data Members
 

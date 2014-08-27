@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 
 namespace FFDraftManager.Services {
-    public sealed class DraftSettingsService {
+    public sealed class DraftSettingsService : INotifyPropertyChanged {
 
         #region Private Data Members
 

@@ -8,8 +8,7 @@ namespace FFDraftManager.Models {
     /// <summary>
     /// A class to represent a player in the draft.
     /// </summary>
-    public class Player
-    {
+    public class Player : INotifyPropertyChanged {
         #region Private Data Members
 
         private string name;

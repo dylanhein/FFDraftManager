@@ -9,7 +9,7 @@ namespace FFDraftManager.Models {
     /// <summary>
     /// A class to represent a team in the draft.
     /// </summary>
-    public class FantasyTeam {
+    public class FantasyTeam : INotifyPropertyChanged {
 
         #region Private Data Members
 

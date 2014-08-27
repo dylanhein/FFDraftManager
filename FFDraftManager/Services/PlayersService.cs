@@ -7,7 +7,7 @@ using System.Linq;
 using FFDraftManager.Models;
 
 namespace FFDraftManager.Services {
-    public sealed class PlayersService {
+    public sealed class PlayersService : INotifyPropertyChanged {
 
         #region Private Data Members
 
