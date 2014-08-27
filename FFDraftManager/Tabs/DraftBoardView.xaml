@@ -57,9 +57,10 @@
                                     <Setter
                                         Property="Background">
                                         <Setter.Value>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                <GradientStop Color="LightGray" Offset="0.0" />
-                                                <GradientStop Color="Red" Offset="1.5" />
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="Tomato" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
                                             </LinearGradientBrush>
                                         </Setter.Value>
                                     </Setter>
@@ -70,9 +71,10 @@
                                     <Setter
                                         Property="Background">
                                         <Setter.Value>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                <GradientStop Color="LightGray" Offset="0.0" />
-                                                <GradientStop Color="SeaGreen" Offset="1.5" />
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="SeaGreen" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
                                             </LinearGradientBrush>
                                         </Setter.Value>
                                     </Setter>
@@ -83,9 +85,10 @@
                                     <Setter
                                         Property="Background">
                                         <Setter.Value>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                <GradientStop Color="LightGray" Offset="0.0" />
-                                                <GradientStop Color="LightBlue" Offset="1.5" />
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="CadetBlue" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
                                             </LinearGradientBrush>
                                         </Setter.Value>
                                     </Setter>
@@ -96,9 +99,10 @@
                                     <Setter
                                         Property="Background">
                                         <Setter.Value>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                <GradientStop Color="LightGray" Offset="0.0" />
-                                                <GradientStop Color="Yellow" Offset="1.5" />
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="Goldenrod" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
                                             </LinearGradientBrush>
                                         </Setter.Value>
                                     </Setter>
@@ -109,9 +113,10 @@
                                     <Setter
                                         Property="Background">
                                         <Setter.Value>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                <GradientStop Color="LightGray" Offset="0.0" />
-                                                <GradientStop Color="Gray" Offset="1.5" />
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="Gray" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
                                             </LinearGradientBrush>
                                         </Setter.Value>
                                     </Setter>
@@ -122,9 +127,10 @@
                                     <Setter
                                         Property="Background">
                                         <Setter.Value>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                <GradientStop Color="LightGray" Offset="0.0" />
-                                                <GradientStop Color="Orange" Offset="1.5" />
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="Orange" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
                                             </LinearGradientBrush>
                                         </Setter.Value>
                                     </Setter>
@@ -133,7 +139,7 @@
                         </Style>
                     </Grid.Style>
                     <TextBlock
-                        Margin="3,0,3,0"
+                        Margin="3,1,3,0"
                         FontWeight="Bold"
                         TextWrapping="NoWrap"
                         TextTrimming="CharacterEllipsis"
