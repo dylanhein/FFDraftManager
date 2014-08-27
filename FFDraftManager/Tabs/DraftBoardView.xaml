@@ -19,17 +19,15 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
-                            Width=".7*"/>
+                            Width="*"/>
                         <ColumnDefinition
-                            Width=".3*"/>
+                            Width="20"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition
-                            Height="16"/>
+                            Height="24"/>
                         <RowDefinition
                             Height="16"/>
-                        <RowDefinition
-                            Height="8"/>
                     </Grid.RowDefinitions>
                     <Grid.Style>
                         <Style
@@ -139,11 +137,22 @@
                         </Style>
                     </Grid.Style>
                     <TextBlock
-                        Margin="3,1,3,0"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="3,2,3,0"
                         FontWeight="Bold"
+                        FontSize="13"
                         TextWrapping="NoWrap"
                         TextTrimming="CharacterEllipsis"
                         Text="{Binding Name}">
+                    </TextBlock>
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="3,-2,3,2"
+                        TextAlignment="Right"
+                        Text="{Binding ByeWeek}">
                     </TextBlock>
                 </Grid>
             </Border>
@@ -199,6 +208,11 @@
             HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
         <!-- Team 2 -->
         <TextBlock
