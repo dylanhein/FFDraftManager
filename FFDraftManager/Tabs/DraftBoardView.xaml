@@ -11,9 +11,136 @@
         <DataTemplate
             x:Key="PickListItemTemplate"
             DataType="{x:Type models:Player}">
-            <TextBlock
-                Text="{Binding Name}">
-            </TextBlock>
+            <Border
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="3"
+                HorizontalAlignment="Stretch">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+                            Width="*"/>
+                        <ColumnDefinition
+                            Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+                            Height="16"/>
+                        <RowDefinition
+                            Height="16"/>
+                        <RowDefinition
+                            Height="8"/>
+                    </Grid.RowDefinitions>
+                    <Grid.Style>
+                        <Style
+                            TargetType="{x:Type Grid}">
+                            <Setter
+                                Property="Margin"
+                                Value="0,-1,0,-1">
+                            </Setter>
+                            <Setter
+                                Property="MaxWidth"
+                                Value="143">
+                            </Setter>
+                            <Setter
+                                Property="HorizontalAlignment"
+                                Value="Stretch">
+                            </Setter>
+                            <Setter
+                                Property="VerticalAlignment"
+                                Value="Stretch">
+                            </Setter>
+                            <Style.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="QB">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                <GradientStop Color="LightGray" Offset="0.0" />
+                                                <GradientStop Color="Red" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="RB">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                <GradientStop Color="LightGray" Offset="0.0" />
+                                                <GradientStop Color="SeaGreen" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="WR">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                <GradientStop Color="LightGray" Offset="0.0" />
+                                                <GradientStop Color="LightBlue" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="TE">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                <GradientStop Color="LightGray" Offset="0.0" />
+                                                <GradientStop Color="Yellow" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="DST">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                <GradientStop Color="LightGray" Offset="0.0" />
+                                                <GradientStop Color="Gray" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="PK">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                <GradientStop Color="LightGray" Offset="0.0" />
+                                                <GradientStop Color="Orange" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <TextBlock
+                        Margin="3,0,3,0"
+                        FontWeight="Bold"
+                        TextWrapping="NoWrap"
+                        TextTrimming="CharacterEllipsis"
+                        Text="{Binding Name}">
+                    </TextBlock>
+                </Grid>
+            </Border>
         </DataTemplate>
     </UserControl.Resources>
     <Grid
