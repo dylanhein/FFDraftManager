@@ -1,8 +1,12 @@
-﻿using System;
+﻿using FFDraftManager.Models;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 
 namespace FFDraftManager.Services {
-    public sealed class DraftStatusService {
+    public sealed class DraftStatusService : INotifyPropertyChanged {
 
         #region Private Data Members
 
@@ -10,9 +14,9 @@ namespace FFDraftManager.Services {
         private static object syncRoot = new Object();
 
         private int currentOverallPick;
-        private int currentRound;
-        private int currentPick;
         private int secondsOnClock;
+        private FantasyTeam teamOnClock;
+        private ObservableCollection<Round> rounds;
 
         #endregion
 
@@ -54,29 +58,17 @@ namespace FFDraftManager.Services {
         }
 
         /// <summary>
-        /// Gets or sets the current round.
+        /// Gets the current round.
         /// </summary>
         public int CurrentRound {
-            get { return currentRound; }
-            set {
-                if (currentRound != value) {
-                    currentRound = value;
-                    RaisePropertyChanged("CurrentRound");
-                }
-            }
+            get { return Rounds.Count + 1; }
         }
 
         /// <summary>
         /// Gets or sets the current pick.
         /// </summary>
         public int CurrentPick {
-            get { return currentPick; }
-            set {
-                if (currentPick != value) {
-                    currentPick = value;
-                    RaisePropertyChanged("CurrentPick");
-                }
-            }
+            get { return TeamOnClock != null ? FantasyTeamService.Instance.Teams.IndexOf(TeamOnClock) + 1 : 0; }
         }
 
         /// <summary>
@@ -92,6 +84,38 @@ namespace FFDraftManager.Services {
             }
         }
 
+        public FantasyTeam TeamOnClock {
+            get { return teamOnClock; }
+            set {
+                if (teamOnClock != value) {
+                    teamOnClock = value;
+                    RaisePropertyChanged("TeamOnClock");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the rounds.
+        /// </summary>
+        public ObservableCollection<Round> Rounds {
+            get { return rounds ?? (rounds = new ObservableCollection<Round>()); }
+            set {
+                if (rounds != value) {
+                    rounds = value;
+                    RaisePropertyChanged("Rounds");
+                }
+            }
+        }
+
+        #endregion
+
+        #region Methods
+
+        public void AddRound(Round round) {
+            Rounds.Add(round);
+            RaisePropertyChanged("Rounds");
+        }
+        
         #endregion
 
         #region PropertyChangedHelper

@@ -13,7 +13,7 @@ namespace FFDraftManager.Dialogs {
     /// <summary>
     /// Controller View Model for the New Draft Dialog window.
     /// </summary>
-    public class NewDraftDialogController {
+    public class NewDraftDialogController : INotifyPropertyChanged {
 
         #region Private Data Members
 
@@ -397,6 +397,8 @@ namespace FFDraftManager.Dialogs {
 
         private void InitializeDraftCommandExecuted(object sender) {
             BuildFantasyTeams();
+            DraftStatusService.Instance.AddRound(new Round { RoundNumber = 1 });
+            DraftStatusService.Instance.TeamOnClock = FantasyTeams.Teams[0];
             window.Close();
         }
 
@@ -432,7 +434,7 @@ namespace FFDraftManager.Dialogs {
         }
 
         private void AddFantasyTeam(string teamName, bool isUserTeam, int draftOrder) {
-            FantasyTeams.Teams.Add(new FantasyTeam {
+            FantasyTeams.AddTeam(new FantasyTeam {
                 TeamName = teamName,
                 IsUserTeam = isUserTeam,
                 DraftOrder = draftOrder,

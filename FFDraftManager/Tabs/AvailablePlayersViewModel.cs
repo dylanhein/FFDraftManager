@@ -13,7 +13,7 @@ using FFDraftManager.Models;
 using FFDraftManager.Services;
 
 namespace FFDraftManager.Tabs {
-    public class AvailablePlayersViewModel {
+    public class AvailablePlayersViewModel : INotifyPropertyChanged {
 
         #region Private Data Members
 
@@ -182,7 +182,10 @@ namespace FFDraftManager.Tabs {
 
         private void DraftPlayerCommandExecuted(object sender) {
             if (SelectedPlayer != null) {
+                AssignPick(SelectedPlayer);
                 RemoveSelectedPlayerFromPositionList();
+                UpdateTeamOnClock();
+                SelectedPlayer = Players.AvailablePlayers.FirstOrDefault();
             }
         }
 
@@ -192,6 +195,18 @@ namespace FFDraftManager.Tabs {
 
         private void Initialize() {
             //SelectedPlayer = Players.AvailablePlayers.FirstOrDefault();
+        }
+
+        private void UpdateTeamOnClock() {
+            int currentTeamIndex = FantasyTeamService.Instance.Teams.IndexOf(DraftStatusService.Instance.TeamOnClock);
+            int nextTeamIndex = currentTeamIndex >= DraftSettingsService.Instance.NumberOfTeams - 1 ? 0 : currentTeamIndex + 1;
+            DraftStatusService.Instance.TeamOnClock = FantasyTeamService.Instance.Teams[nextTeamIndex];
+        }
+
+        private void AssignPick(Player player) {
+            if (player != null) {
+                FantasyTeamService.Instance.AddPlayer(DraftStatusService.Instance.TeamOnClock, player);
+            }
         }
 
         private void RemoveSelectedPlayerFromPositionList() {
