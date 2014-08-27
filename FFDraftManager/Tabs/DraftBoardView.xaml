@@ -11,9 +11,142 @@
         <DataTemplate
             x:Key="PickListItemTemplate"
             DataType="{x:Type models:Player}">
-            <TextBlock
-                Text="{Binding Name}">
-            </TextBlock>
+            <Border
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="3"
+                HorizontalAlignment="Stretch">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+                            Width=".7*"/>
+                        <ColumnDefinition
+                            Width=".3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+                            Height="16"/>
+                        <RowDefinition
+                            Height="16"/>
+                        <RowDefinition
+                            Height="8"/>
+                    </Grid.RowDefinitions>
+                    <Grid.Style>
+                        <Style
+                            TargetType="{x:Type Grid}">
+                            <Setter
+                                Property="Margin"
+                                Value="0,-1,0,-1">
+                            </Setter>
+                            <Setter
+                                Property="MaxWidth"
+                                Value="143">
+                            </Setter>
+                            <Setter
+                                Property="HorizontalAlignment"
+                                Value="Stretch">
+                            </Setter>
+                            <Setter
+                                Property="VerticalAlignment"
+                                Value="Stretch">
+                            </Setter>
+                            <Style.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="QB">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="Tomato" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="RB">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="SeaGreen" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="WR">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="CadetBlue" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="TE">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="Goldenrod" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="DST">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="Gray" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Position}"
+                                    Value="PK">
+                                    <Setter
+                                        Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="Azure" Offset="0.0" />
+                                                <GradientStop Color="Orange" Offset="0.1" />
+                                                <GradientStop Color="Azure" Offset="1.5" />
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <TextBlock
+                        Margin="3,1,3,0"
+                        FontWeight="Bold"
+                        TextWrapping="NoWrap"
+                        TextTrimming="CharacterEllipsis"
+                        Text="{Binding Name}">
+                    </TextBlock>
+                </Grid>
+            </Border>
         </DataTemplate>
     </UserControl.Resources>
     <Grid
@@ -63,6 +196,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="0"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -79,6 +213,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="1"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -95,6 +230,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="2"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -111,6 +247,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="3"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -127,6 +264,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="4"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -143,6 +281,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="5"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -159,6 +298,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="6"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -175,6 +315,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="7"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -191,6 +332,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="8"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -207,6 +349,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="9"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -223,6 +366,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="10"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
@@ -239,6 +383,7 @@
         <ListBox
             Grid.Row="1"
             Grid.Column="11"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource PickListItemTemplate}"
             ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.Players, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
         </ListBox>
