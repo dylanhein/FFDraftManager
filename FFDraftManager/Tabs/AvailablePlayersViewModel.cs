@@ -194,13 +194,30 @@ namespace FFDraftManager.Tabs {
         #region Methods
 
         private void Initialize() {
-            //SelectedPlayer = Players.AvailablePlayers.FirstOrDefault();
+            SelectedPlayer = Players.AvailablePlayers.FirstOrDefault();
         }
 
         private void UpdateTeamOnClock() {
             int currentTeamIndex = FantasyTeamService.Instance.Teams.IndexOf(DraftStatusService.Instance.TeamOnClock);
-            int nextTeamIndex = currentTeamIndex >= DraftSettingsService.Instance.NumberOfTeams - 1 ? 0 : currentTeamIndex + 1;
+            int nextTeamIndex = GetNextTeamIndex(currentTeamIndex);
             DraftStatusService.Instance.TeamOnClock = FantasyTeamService.Instance.Teams[nextTeamIndex];
+        }
+
+        private int GetNextTeamIndex(int currentTeamIndex) {
+            if (DraftStatusService.Instance.CurrentRound % 2 == 1) {
+                if (currentTeamIndex == DraftSettingsService.Instance.NumberOfTeams - 1) {
+                    DraftStatusService.Instance.AddRound();
+                    return DraftSettingsService.Instance.NumberOfTeams - 1;
+                }
+                return currentTeamIndex + 1;
+            }
+            else {
+                if (currentTeamIndex == 0) {
+                    DraftStatusService.Instance.AddRound();
+                    return 0;
+                }
+                return currentTeamIndex - 1;
+            }
         }
 
         private void AssignPick(Player player) {

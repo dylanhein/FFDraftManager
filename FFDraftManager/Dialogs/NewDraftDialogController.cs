@@ -397,7 +397,7 @@ namespace FFDraftManager.Dialogs {
 
         private void InitializeDraftCommandExecuted(object sender) {
             BuildFantasyTeams();
-            DraftStatusService.Instance.AddRound(new Round { RoundNumber = 1 });
+            DraftStatusService.Instance.AddRound();
             DraftStatusService.Instance.TeamOnClock = FantasyTeams.Teams[0];
             window.Close();
         }
