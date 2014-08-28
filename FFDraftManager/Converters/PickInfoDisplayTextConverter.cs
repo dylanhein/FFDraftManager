@@ -7,7 +7,7 @@ using System.Text;
 using FFDraftManager.Models;
 
 namespace FFDraftManager.Converters {
-    class PlayerDisplayTextConverter : IValueConverter {
+    class PickInfoDisplayTextConverter : IValueConverter {
         /// <summary>
         /// Converts source values to a value for the binding target. The data binding engine calls this method when it propagates the values from source bindings to the binding target.
         /// </summary>
@@ -18,7 +18,7 @@ namespace FFDraftManager.Converters {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
             if (value is Player) {
                 var player = value as Player;
-                return string.Format("{0} - {1} - {2} - {3}{4} - Bye {5}", player.Adp.ToString(), player.Name, player.Team, player.Position, player.PositionRank.ToString(), player.ByeWeek);
+                return string.Format("{0}{1} - {2}", player.Position, player.PositionRank.ToString(), player.Team);
             }
             return "";
         }

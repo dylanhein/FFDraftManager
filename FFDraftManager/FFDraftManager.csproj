@@ -60,6 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="Constants\DraftDefaults.cs" />
     <Compile Include="Converters\NegativeVisibilityConverter.cs" />
+    <Compile Include="Converters\PickInfoDisplayTextConverter.cs" />
     <Compile Include="Converters\PlayerDisplayTextConverter.cs" />
     <Compile Include="Dialogs\NewDraftDialog.xaml.cs">
       <DependentUpon>NewDraftDialog.xaml</DependentUpon>

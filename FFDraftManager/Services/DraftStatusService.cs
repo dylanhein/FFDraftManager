@@ -61,7 +61,7 @@ namespace FFDraftManager.Services {
         /// Gets the current round.
         /// </summary>
         public int CurrentRound {
-            get { return Rounds.Count + 1; }
+            get { return Rounds.Count; }
         }
 
         /// <summary>
@@ -111,7 +111,8 @@ namespace FFDraftManager.Services {
 
         #region Methods
 
-        public void AddRound(Round round) {
+        public void AddRound() {
+            var round = new Round { RoundNumber = Rounds.Count + 1 }; 
             Rounds.Add(round);
             RaisePropertyChanged("Rounds");
         }
