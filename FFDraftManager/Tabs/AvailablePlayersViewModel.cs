@@ -201,6 +201,9 @@ namespace FFDraftManager.Tabs {
             int currentTeamIndex = FantasyTeamService.Instance.Teams.IndexOf(DraftStatusService.Instance.TeamOnClock);
             int nextTeamIndex = GetNextTeamIndex(currentTeamIndex);
             DraftStatusService.Instance.TeamOnClock = FantasyTeamService.Instance.Teams[nextTeamIndex];
+            DraftStatusService.Instance.RaisePropertyChanged("CurrentOverallPick");
+            DraftStatusService.Instance.RaisePropertyChanged("CurrentPick");
+            DraftStatusService.Instance.RaisePropertyChanged("CurrentRound");
         }
 
         private int GetNextTeamIndex(int currentTeamIndex) {

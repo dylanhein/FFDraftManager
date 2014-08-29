@@ -14,7 +14,6 @@ namespace FFDraftManager.Services {
         private static object syncRoot = new Object();
 
         private bool draftInProgress;
-        private int currentOverallPick;
         private int secondsOnClock;
         private FantasyTeam teamOnClock;
         private ObservableCollection<Round> rounds;
@@ -49,12 +48,8 @@ namespace FFDraftManager.Services {
         /// Gets or sets the current overall pick.
         /// </summary>
         public int CurrentOverallPick {
-            get { return currentOverallPick; }
-            set {
-                if (currentOverallPick != value) {
-                    currentOverallPick = value;
-                    RaisePropertyChanged("CurrentOverallPick");
-                }
+            get {
+                return (CurrentRound - 1) * DraftSettingsService.Instance.NumberOfTeams + CurrentPick;
             }
         }
 
@@ -79,7 +74,20 @@ namespace FFDraftManager.Services {
         /// Gets or sets the current pick.
         /// </summary>
         public int CurrentPick {
-            get { return TeamOnClock != null ? FantasyTeamService.Instance.Teams.IndexOf(TeamOnClock) + 1 : 0; }
+            get {
+                if (CurrentRound % 2 == 1) {
+                    if (TeamOnClock.DraftOrder > 1) {
+                        return TeamOnClock.DraftOrder;
+                    }
+                    return 1;
+                }
+                else {
+                    if (TeamOnClock.DraftOrder < 12) {
+                        return (DraftSettingsService.Instance.NumberOfTeams - TeamOnClock.DraftOrder + 1);
+                    }
+                    return 1;
+                }; 
+            }
         }
 
         /// <summary>
@@ -96,7 +104,7 @@ namespace FFDraftManager.Services {
         }
 
         public FantasyTeam TeamOnClock {
-            get { return teamOnClock; }
+            get { return teamOnClock ?? ( teamOnClock = new FantasyTeam() ); }
             set {
                 if (teamOnClock != value) {
                     teamOnClock = value;

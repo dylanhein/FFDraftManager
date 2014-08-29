@@ -106,9 +106,11 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition
-                        Height="60"/>
+                        Height="40"/>
                     <RowDefinition
-                        Height="65"/>
+                        Height="35"/>
+                    <RowDefinition
+                        Height="50"/>
                 </Grid.RowDefinitions>
                 <Grid.Background>
                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
@@ -116,14 +118,68 @@
                         <GradientStop Color="LightSteelBlue" Offset="0.5" />
                     </LinearGradientBrush>
                 </Grid.Background>
-                <!-- On The Clock -->
+                <!-- Pick -->
                 <StackPanel
                     Grid.Row="0"
                     Grid.Column="0"
                     Orientation="Horizontal">
+                    <!-- Current Round -->
                     <TextBlock
                         VerticalAlignment="Bottom"
-                        Margin="10,0,0,0"
+                        Margin="11,5,0,1"
+                        FontSize="24"
+                        Foreground="Black"
+                        Text="Round #">
+                    </TextBlock>
+                    <TextBlock
+                        VerticalAlignment="Bottom"
+                        Margin="1,5,5,0"
+                        FontWeight="Bold"
+                        Foreground="DarkGoldenrod"
+                        Text="{Binding Source={x:Static services:DraftStatusService.Instance}, Path=CurrentRound, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        FontSize="28">
+                    </TextBlock>
+                    <!-- Current Pick -->
+                    <TextBlock
+                        VerticalAlignment="Bottom"
+                        Margin="11,5,0,1"
+                        FontSize="24"
+                        Foreground="Black"
+                        Text="Pick #">
+                    </TextBlock>
+                    <TextBlock
+                        VerticalAlignment="Bottom"
+                        Margin="1,5,5,0"
+                        FontWeight="Bold"
+                        Foreground="DarkGoldenrod"
+                        Text="{Binding Source={x:Static services:DraftStatusService.Instance}, Path=CurrentPick, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        FontSize="28">
+                    </TextBlock>
+                    <!-- Overall Pick -->
+                    <TextBlock
+                        VerticalAlignment="Bottom"
+                        Margin="11,5,0,1"
+                        FontSize="24"
+                        Foreground="Black"
+                        Text="Overall Pick #">
+                    </TextBlock>
+                    <TextBlock
+                        VerticalAlignment="Bottom"
+                        Margin="1,5,5,0"
+                        FontWeight="Bold"
+                        Foreground="DarkGoldenrod"
+                        Text="{Binding Source={x:Static services:DraftStatusService.Instance}, Path=CurrentOverallPick, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        FontSize="28">
+                    </TextBlock>
+                </StackPanel>
+                <!-- On The Clock -->
+                <StackPanel
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Bottom"
+                        Margin="10,0,0,5"
                         FontSize="36"
                         FontWeight="Bold"
                         Foreground="Red"
@@ -131,17 +187,16 @@
                     </TextBlock>
                     <TextBlock
                         VerticalAlignment="Bottom"
-                        Margin="10,0,5,3"
+                        Margin="10,0,5,8"
                         Text="IS ON THE CLOCK"
                         FontSize="24">
                     </TextBlock>
                 </StackPanel>
-
                 <!-- New Draft Button -->
                 <Button
                     Grid.Row="0"
                     Grid.Column="0"
-                    Grid.RowSpan="2"
+                    Grid.RowSpan="3"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Height="125"
