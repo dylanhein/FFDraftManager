@@ -13,6 +13,7 @@ namespace FFDraftManager.Services {
         private static volatile DraftStatusService instance;
         private static object syncRoot = new Object();
 
+        private bool draftInProgress;
         private int currentOverallPick;
         private int secondsOnClock;
         private FantasyTeam teamOnClock;
@@ -53,6 +54,16 @@ namespace FFDraftManager.Services {
                 if (currentOverallPick != value) {
                     currentOverallPick = value;
                     RaisePropertyChanged("CurrentOverallPick");
+                }
+            }
+        }
+
+        public bool DraftInProgress {
+            get { return draftInProgress; }
+            set {
+                if (draftInProgress != value) {
+                    draftInProgress = value;
+                    RaisePropertyChanged("DraftInProgress");
                 }
             }
         }
