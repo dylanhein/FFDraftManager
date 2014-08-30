@@ -4,6 +4,7 @@
 *.exe
 *.o
 *.so
+*.suo
 
 *.7z
 *.dmg
