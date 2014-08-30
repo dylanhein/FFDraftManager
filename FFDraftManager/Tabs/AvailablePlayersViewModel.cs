@@ -193,10 +193,16 @@ namespace FFDraftManager.Tabs {
 
         #region Methods
 
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
         private void Initialize() {
             SelectedPlayer = Players.AvailablePlayers.FirstOrDefault();
         }
 
+        /// <summary>
+        /// Updates the team on clock.
+        /// </summary>
         private void UpdateTeamOnClock() {
             int currentTeamIndex = FantasyTeamService.Instance.Teams.IndexOf(DraftStatusService.Instance.TeamOnClock);
             int nextTeamIndex = GetNextTeamIndex(currentTeamIndex);
@@ -206,6 +212,11 @@ namespace FFDraftManager.Tabs {
             DraftStatusService.Instance.RaisePropertyChanged("CurrentRound");
         }
 
+        /// <summary>
+        /// Gets the index of the next team.
+        /// </summary>
+        /// <param name="currentTeamIndex">Index of the current team.</param>
+        /// <returns></returns>
         private int GetNextTeamIndex(int currentTeamIndex) {
             if (DraftStatusService.Instance.CurrentRound % 2 == 1) {
                 if (currentTeamIndex == DraftSettingsService.Instance.NumberOfTeams - 1) {
@@ -223,12 +234,19 @@ namespace FFDraftManager.Tabs {
             }
         }
 
+        /// <summary>
+        /// Assigns the pick.
+        /// </summary>
+        /// <param name="player">The player.</param>
         private void AssignPick(Player player) {
             if (player != null) {
                 FantasyTeamService.Instance.AddPlayer(DraftStatusService.Instance.TeamOnClock, player);
             }
         }
 
+        /// <summary>
+        /// Removes the selected player from position list.
+        /// </summary>
         private void RemoveSelectedPlayerFromPositionList() {
             if (SelectedPlayer != null) {
                 var player = selectedPlayer;
