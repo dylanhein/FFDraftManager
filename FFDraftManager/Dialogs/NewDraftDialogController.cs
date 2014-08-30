@@ -399,6 +399,7 @@ namespace FFDraftManager.Dialogs {
             BuildFantasyTeams();
             DraftStatusService.Instance.AddRound();
             DraftStatusService.Instance.TeamOnClock = FantasyTeams.Teams[0];
+            DraftStatusService.Instance.DraftInProgress = true;
             window.Close();
         }
 

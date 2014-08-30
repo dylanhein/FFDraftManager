@@ -25,27 +25,6 @@ namespace FFDraftManager.Tabs {
         }
 
         /// <summary>
-        /// Gets the draft status.
-        /// </summary>
-        public DraftStatusService DraftStatus {
-            get { return DraftStatusService.Instance; }
-        }
-
-        /// <summary>
-        /// Gets the players.
-        /// </summary>
-        public PlayersService Players {
-            get { return PlayersService.Instance; }
-        }
-
-        /// <summary>
-        /// Gets the teams.
-        /// </summary>
-        public FantasyTeamService Teams {
-            get { return FantasyTeamService.Instance; }
-        }
-
-        /// <summary>
         /// Gets a value indicating whether this instance is team5 visible.
         /// </summary>
         public bool IsTeam5Visible {
