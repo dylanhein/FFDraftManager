@@ -134,6 +134,8 @@ namespace FFDraftManager.Services {
             var round = new Round { RoundNumber = Rounds.Count + 1 }; 
             Rounds.Add(round);
             RaisePropertyChanged("Rounds");
+            RaisePropertyChanged("CurrentRound");
+            RaisePropertyChanged("CurrentPick");
         }
         
         #endregion
