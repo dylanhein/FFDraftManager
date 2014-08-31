@@ -61,6 +61,7 @@
                     Padding="5,2,5,3">
                     <MenuItem 
                         Header="_Undo Last Draft Pick"
+                        Command="{Binding Path=UndoLastDraftPickCommand}"
                         Padding="5,2,5,3"/>
                     <MenuItem 
                         Header="_Change Draft Pick"

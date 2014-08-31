@@ -26,6 +26,7 @@ namespace FFDraftManager {
         private bool draftInProgress;
         private bool draftInitialized;
         private ICommand startNewDraftCommand;
+        private ICommand undoLastDraftPickCommand;
         
         #endregion
 
@@ -91,9 +92,82 @@ namespace FFDraftManager {
             DraftInProgress = true;
         }
 
+        public ICommand UndoLastDraftPickCommand {
+            get {
+                return undoLastDraftPickCommand ?? (undoLastDraftPickCommand = new DelegateCommand(UndoLastDraftPickCommandExecuted));
+            }
+        }
+
+        private void UndoLastDraftPickCommandExecuted(object sender) {
+            int currentTeamIndex = DraftStatusService.Instance.TeamOnClock.DraftOrder - 1;
+            int previousTeamIndex;
+            if (DraftStatusService.Instance.CurrentRound % 2 == 1) {
+                if (currentTeamIndex == 0) {
+                    previousTeamIndex = 0;
+                    DraftStatusService.Instance.Rounds.RemoveAt(DraftStatusService.Instance.Rounds.Count() - 1);
+                }
+                else {
+                    previousTeamIndex = currentTeamIndex - 1;
+                }
+            }
+            else {
+                if (currentTeamIndex == DraftSettingsService.Instance.NumberOfTeams - 1) {
+                    previousTeamIndex = DraftSettingsService.Instance.NumberOfTeams - 1;
+                    DraftStatusService.Instance.Rounds.RemoveAt(DraftStatusService.Instance.Rounds.Count() - 1);
+                }
+                else {
+                    previousTeamIndex = currentTeamIndex + 1;
+                }
+            }
+
+            var previousTeam = FantasyTeamService.Instance.Teams.ElementAt(previousTeamIndex);
+            var previousPlayer = previousTeam.Players.ElementAt(previousTeam.Players.Count() - 1);
+            previousTeam.Players.RemoveAt(previousTeam.Players.Count() - 1);
+            AddPlayerToPlayerLists(previousPlayer);
+
+            DraftStatusService.Instance.TeamOnClock = FantasyTeamService.Instance.Teams[previousTeamIndex];
+            DraftStatusService.Instance.RaisePropertyChanged("CurrentOverallPick");
+            DraftStatusService.Instance.RaisePropertyChanged("CurrentPick");
+            DraftStatusService.Instance.RaisePropertyChanged("CurrentRound");
+        }
+
         #endregion
 
         #region Methods
+
+        private void AddPlayerToPlayerLists(Player player) {
+            if (player != null) {
+                switch (player.Position) {
+                    case PositionType.QB:
+                        Players.AvailableQbs.Insert(0, player);
+                        break;
+                    case PositionType.RB:
+                        Players.AvailableRbs.Insert(0, player);
+                        Players.AvailableWrRbs.Insert(0, player);
+                        Players.AvailableWrRbTes.Insert(0, player);
+                        break;
+                    case PositionType.WR:
+                        Players.AvailableWrs.Insert(0, player);
+                        Players.AvailableWrRbs.Insert(0, player);
+                        Players.AvailableWrRbTes.Insert(0, player);
+                        break;
+                    case PositionType.TE:
+                        Players.AvailableTes.Insert(0, player);
+                        Players.AvailableWrRbs.Insert(0, player);
+                        Players.AvailableWrRbTes.Insert(0, player);
+                        break;
+                    case PositionType.PK:
+                        Players.AvailablePks.Insert(0, player);
+                        break;
+                    case PositionType.DST:
+                        Players.AvailableDefs.Insert(0, player);
+                        break;
+                    default:
+                        break;
+                }
+                Players.AvailablePlayers.Insert(0, player);
+            }
+        }
 
         private void UpdateAvailablePlayers() {
 
