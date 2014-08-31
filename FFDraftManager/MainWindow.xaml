@@ -200,9 +200,14 @@
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Height="125"
-                    Background="Transparent"
                     Visibility="{Binding Source={x:Static services:DraftStatusService.Instance}, Path=DraftInProgress, Converter={StaticResource NegativeVisibilityConverter}, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                     Command="{Binding Path=StartNewDraftCommand}">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="AliceBlue" Offset="0.0" />
+                            <GradientStop Color="LightSteelBlue" Offset="0.5" />
+                        </LinearGradientBrush>
+                    </Button.Background>
                     <Button.Content>
                         <TextBlock
                             TextAlignment="Center"
