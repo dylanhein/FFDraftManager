@@ -59,6 +59,8 @@
                     Height="Auto"/>
                 <RowDefinition
                     Height="Auto"/>
+                <RowDefinition
+                    Height="Auto"/>
             </Grid.RowDefinitions>
             <!-- Number of Teams -->
             <Label
@@ -193,52 +195,52 @@
             <!-- Number of QB/WR/RB/TEs -->
             <Label
                 Grid.Column="0"
-                Grid.Row="9"
+                Grid.Row="10"
                 Content="Q/W/R/T:"
                 HorizontalAlignment="Right">
             </Label>
             <TextBox
                 Grid.Column="1"
-                Grid.Row="9"
+                Grid.Row="10"
                 Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfQbWrRbTes, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                 Margin="10,0,0,10">
             </TextBox>
             <!-- Number of Bench Players -->
             <Label
                 Grid.Column="0"
-                Grid.Row="10"
+                Grid.Row="11"
                 Content="Bench:"
                 HorizontalAlignment="Right">
             </Label>
             <TextBox
                 Grid.Column="1"
-                Grid.Row="10"
+                Grid.Row="11"
                 Text="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=NumberOfBenchPlayers, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                 Margin="10,0,0,10">
             </TextBox>
             <!-- Use Pick Timer -->
             <Label
                 Grid.Column="0"
-                Grid.Row="11"
+                Grid.Row="12"
                 Content="Use Pick Timer:"
                 HorizontalAlignment="Right">
             </Label>
             <CheckBox
                 Grid.Column="1"
-                Grid.Row="11"
+                Grid.Row="12"
                 IsChecked="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=PicksTimed, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                 Margin="10,7,0,10">
             </CheckBox>
             <!-- Is Draft PPR -->
             <Label
                 Grid.Column="0"
-                Grid.Row="12"
+                Grid.Row="13"
                 Content="Is PPR Draft:"
                 HorizontalAlignment="Right">
             </Label>
             <CheckBox
                 Grid.Column="1"
-                Grid.Row="12"
+                Grid.Row="13"
                 IsChecked="{Binding Source={x:Static services:DraftSettingsService.Instance}, Path=IsPPR, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                 Margin="10,7,0,10">
             </CheckBox>
@@ -500,7 +502,7 @@
         <StackPanel
             HorizontalAlignment="Right"
             Orientation="Horizontal"
-            Margin="25,10,25,10">
+            Margin="25,-10,25,10">
             <Button 
                 Width="120"
                 Height="30"
