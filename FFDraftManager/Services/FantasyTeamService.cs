@@ -62,6 +62,7 @@ namespace FFDraftManager.Services {
         public FantasyTeam Team10 { get { return Teams.FirstOrDefault(t => t.DraftOrder == 10); } }
         public FantasyTeam Team11 { get { return Teams.FirstOrDefault(t => t.DraftOrder == 11); } }
         public FantasyTeam Team12 { get { return Teams.FirstOrDefault(t => t.DraftOrder == 12); } }
+        public FantasyTeam UserTeam { get { return Teams.FirstOrDefault(t => t.IsUserTeam); } }
 
         #endregion
 
@@ -82,6 +83,7 @@ namespace FFDraftManager.Services {
             RaisePropertyChanged("Team10");
             RaisePropertyChanged("Team11");
             RaisePropertyChanged("Team12");
+            RaisePropertyChanged("UserTeam");
         }
         
         public void AddPlayer(FantasyTeam team, Player player) {
