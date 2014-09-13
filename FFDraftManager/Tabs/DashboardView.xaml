@@ -11,6 +11,8 @@
             <ColumnDefinition
                 Width="185"/>
             <ColumnDefinition
+                Width="Auto"/>
+            <ColumnDefinition
                 Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -27,13 +29,15 @@
             TextTrimming="CharacterEllipsis"
             TextWrapping="NoWrap"
             FontWeight="Bold"
+            FontSize="12"
             Margin="0,20,0,10"
             Text="My Draft Picks">
         </TextBlock>
         <ListBox
             Grid.Row="1"
             Grid.Column="0"
-            Margin="20,0,20,0"
+            Margin="20,0,20,20"
+            Background="{StaticResource ResourceKey=ChartGradient}"
             HorizontalContentAlignment="Stretch"
             ScrollViewer.CanContentScroll="False"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
@@ -45,5 +49,775 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
+        
+        <!-- Team Breakdown Chart -->
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            TextTrimming="CharacterEllipsis"
+            TextWrapping="NoWrap"
+            FontWeight="Bold"
+            FontSize="12"
+            Margin="0,20,0,10"
+            Text="Positional Breakdown">
+        </TextBlock>
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            BorderBrush="Gray"
+            BorderThickness="1"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Background="{StaticResource ResourceKey=ChartGradient}"
+            Padding="0"
+            Height="308"
+            Width="440">
+            <Grid
+                Width="440">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="80"/>
+                    <ColumnDefinition
+                        Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="28"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="25"/>
+                    <RowDefinition
+                        Height="28"/>
+                </Grid.RowDefinitions>
+                <!-- Chart Team Labels -->
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="5,3,0,0"
+                    Padding="0,2,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="8"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="9"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="10"
+                    Grid.Column="0"
+                    Padding="0,2,0,0"
+                    Margin="5,0,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="11"
+                    Grid.Column="0"
+                    Margin="5,0,0,3"
+                    Padding="0,2,0,0"
+                    Width="75"
+                    Height="21"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Foreground="Azure"
+                    Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                    Text="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+                </TextBlock>
+                <!-- Team Breakdown Bars -->
+                <!-- Team 1 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,5,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,5,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,5,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,5,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,5,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,5,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 2 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 3 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 4 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 5 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 6 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 7 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 8 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 9 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="8"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 10 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="9"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 11 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="10"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,2">
+                    </Rectangle>
+                </StackPanel>
+                <!-- Team 12 Breakdown Bar -->
+                <StackPanel
+                    Grid.Row="11"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    Width="360"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=QBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,5">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=RBGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,5">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=WRGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,5">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=TEGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,5">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=DSTGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,5">
+                    </Rectangle>
+                    <Rectangle
+                        Fill="{StaticResource ResourceKey=PKGradient}"
+                        Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        Height="21"
+                        Margin="0,2,0,5">
+                    </Rectangle>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

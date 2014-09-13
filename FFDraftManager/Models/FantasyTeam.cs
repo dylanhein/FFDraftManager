@@ -74,6 +74,13 @@ namespace FFDraftManager.Models {
             }
         }
 
+        public int QBCount { get { return Players.Where(p => p.Position == PositionType.QB).Count(); } }
+        public int RBCount { get { return Players.Where(p => p.Position == PositionType.RB).Count(); } }
+        public int WRCount { get { return Players.Where(p => p.Position == PositionType.WR).Count(); } }
+        public int TECount { get { return Players.Where(p => p.Position == PositionType.TE).Count(); } }
+        public int DSTCount { get { return Players.Where(p => p.Position == PositionType.DST).Count(); } }
+        public int PKCount { get { return Players.Where(p => p.Position == PositionType.PK).Count(); } }
+
         #endregion
 
         #region PropertyChangedHelper
