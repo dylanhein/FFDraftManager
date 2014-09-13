@@ -241,6 +241,12 @@ namespace FFDraftManager.Tabs {
         private void AssignPick(Player player) {
             if (player != null) {
                 FantasyTeamService.Instance.AddPlayer(DraftStatusService.Instance.TeamOnClock, player);
+                DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("QBCount");
+                DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("RBCount");
+                DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("WRCount");
+                DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("TECount");
+                DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("DSTCount");
+                DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("PKCount");
             }
         }
 
