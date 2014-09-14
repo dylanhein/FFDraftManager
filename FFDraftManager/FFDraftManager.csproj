@@ -62,6 +62,7 @@
     <Compile Include="Converters\NegativeVisibilityConverter.cs" />
     <Compile Include="Converters\PickInfoDisplayTextConverter.cs" />
     <Compile Include="Converters\PlayerDisplayTextConverter.cs" />
+    <Compile Include="Converters\PositionCountToolTipTextConverter.cs" />
     <Compile Include="Converters\PostionCountToBarWidthConverter.cs" />
     <Compile Include="Dialogs\NewDraftDialog.xaml.cs">
       <DependentUpon>NewDraftDialog.xaml</DependentUpon>

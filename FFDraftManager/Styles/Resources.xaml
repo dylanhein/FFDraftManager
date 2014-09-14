@@ -7,6 +7,8 @@
         x:Key="PickInfoDisplayTextConverter"/>
     <cons:PostionCountToBarWidthConverter
         x:Key="PostionCountToBarWidthConverter"/>
+    <cons:PositionCountToolTipTextConverter
+        x:Key="PositionCountToolTipTextConverter"/>
 
 <!-- Gradients -->
     <LinearGradientBrush x:Key="RoundGradient" StartPoint="0.5,0" EndPoint="0.5,1">
