@@ -362,4 +362,45 @@
             </StackPanel>
         </StackPanel>
     </DataTemplate>
+    
+    <!-- Team ADP Item Template -->
+    <DataTemplate
+        x:Key="TeamAdpItemTemplate"
+        DataType="{x:Type models:FantasyTeam}">
+        <StackPanel
+            Orientation="Vertical"
+            Width="25">
+            <!-- Chart Team Label -->
+            <TextBlock
+                Margin="2,2,0,2"
+                Padding="0,2,0,0"
+                Width="25"
+                Height="21"
+                FontWeight="Bold"
+                FontSize="12"
+                VerticalAlignment="Center"
+                TextAlignment="Center"
+                Foreground="Azure"
+                Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                Text="{Binding TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+            </TextBlock>
+            <!-- Team Breakdown Bar -->
+            <StackPanel
+                Background="Transparent"
+                Width=""
+                Orientation="Horizontal">
+                <Rectangle
+                    Fill="{StaticResource ResourceKey=QBGradient}"
+                    Width="{Binding QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Height="21"
+                    Margin="0,2,0,2">
+                    <Rectangle.ToolTip>
+                        <TextBlock
+                            Text="{Binding Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
+                        </TextBlock>
+                    </Rectangle.ToolTip>
+                </Rectangle>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
 </ResourceDictionary>
