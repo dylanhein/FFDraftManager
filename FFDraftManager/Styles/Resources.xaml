@@ -20,13 +20,13 @@
 
     <LinearGradientBrush x:Key="QBGradient" StartPoint="0.5,0" EndPoint="0.5,1">
         <GradientStop Color="Azure" Offset="0.0" />
-        <GradientStop Color="Tomato" Offset="0.1" />
+        <GradientStop Color="Goldenrod" Offset="0.1" />
         <GradientStop Color="Azure" Offset="1.5" />
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="RBGradient" StartPoint="0.5,0" EndPoint="0.5,1">
         <GradientStop Color="Azure" Offset="0.0" />
-        <GradientStop Color="SeaGreen" Offset="0.1" />
+        <GradientStop Color="MediumSeaGreen" Offset="0.1" />
         <GradientStop Color="Azure" Offset="1.5" />
     </LinearGradientBrush>
 
@@ -38,13 +38,13 @@
 
     <LinearGradientBrush x:Key="TEGradient" StartPoint="0.5,0" EndPoint="0.5,1">
         <GradientStop Color="Azure" Offset="0.0" />
-        <GradientStop Color="Goldenrod" Offset="0.1" />
+        <GradientStop Color="Peru" Offset="0.1" />
         <GradientStop Color="Azure" Offset="1.5" />
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="DSTGradient" StartPoint="0.5,0" EndPoint="0.5,1">
         <GradientStop Color="Azure" Offset="0.0" />
-        <GradientStop Color="Gray" Offset="0.1" />
+        <GradientStop Color="Tomato" Offset="0.1" />
         <GradientStop Color="Azure" Offset="1.5" />
     </LinearGradientBrush>
 
@@ -69,25 +69,26 @@
     
     <!-- Round Template -->
     <DataTemplate
-            x:Key="RoundItemTemplate"
-            DataType="{x:Type models:Round}">
+        x:Key="RoundItemTemplate"
+        DataType="{x:Type models:Round}">
         <Border
-                BorderBrush="Black"
-                BorderThickness="2"
-                CornerRadius="3"
-                HorizontalAlignment="Stretch">
+            Margin="-2,0,0,0"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="3"
+            HorizontalAlignment="Stretch">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition
-                            Width="*"/>
+                        Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition
-                            Height="40"/>
+                        Height="40"/>
                 </Grid.RowDefinitions>
                 <Grid.Style>
                     <Style
-                            TargetType="{x:Type Grid}">
+                        TargetType="{x:Type Grid}">
                         <Setter
                             Property="Margin"
                             Value="0,-1,0,-1">
@@ -111,19 +112,19 @@
                     </Style>
                 </Grid.Style>
                 <TextBlock
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        Margin="0"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        FontWeight="Bold"
-                        FontSize="24"
-                        FontFamily="Arial"
-                        Foreground="White"
-                        TextWrapping="NoWrap"
-                        TextTrimming="CharacterEllipsis"
-                        Text="{Binding RoundNumber}">
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontWeight="Bold"
+                    FontSize="24"
+                    FontFamily="Arial"
+                    Foreground="White"
+                    TextWrapping="NoWrap"
+                    TextTrimming="CharacterEllipsis"
+                    Text="{Binding RoundNumber}">
                 </TextBlock>
             </Grid>
         </Border>
@@ -131,44 +132,46 @@
     
     <!-- Draft Pick Template -->
     <DataTemplate
-            x:Key="PickListItemTemplate"
-            DataType="{x:Type models:Player}">
+        x:Key="PickListItemTemplate"
+        DataType="{x:Type models:Player}">
         <Border
-                BorderBrush="Black"
-                BorderThickness="2"
-                CornerRadius="3"
-                HorizontalAlignment="Stretch">
+            Margin="-2,0,0,0"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="3"
+            HorizontalAlignment="Stretch">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition
-                            Width="*"/>
+                        Width="*"
+                        MaxWidth="110"/>
                     <ColumnDefinition
-                            Width="27"/>
+                        Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition
-                            Height="24"/>
+                        Height="24"/>
                     <RowDefinition
-                            Height="16"/>
+                        Height="16"/>
                 </Grid.RowDefinitions>
                 <Grid.Style>
                     <Style
-                            TargetType="{x:Type Grid}">
+                        TargetType="{x:Type Grid}">
                         <Setter
-                                Property="Margin"
-                                Value="0,-1,0,-1">
+                            Property="Margin"
+                            Value="0,-1,0,-1">
                         </Setter>
                         <Setter
-                                Property="MaxWidth"
-                                Value="143">
+                            Property="MaxWidth"
+                            Value="143">
                         </Setter>
                         <Setter
-                                Property="HorizontalAlignment"
-                                Value="Stretch">
+                            Property="HorizontalAlignment"
+                            Value="Stretch">
                         </Setter>
                         <Setter
-                                Property="VerticalAlignment"
-                                Value="Stretch">
+                            Property="VerticalAlignment"
+                            Value="Stretch">
                         </Setter>
                         <Style.Triggers>
                             <DataTrigger
@@ -223,45 +226,44 @@
                     </Style>
                 </Grid.Style>
                 <TextBlock
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        Margin="3,2,3,0"
-                        FontWeight="Bold"
-                        FontSize="13"
-                        TextWrapping="NoWrap"
-                        TextTrimming="CharacterEllipsis"
-                        Text="{Binding Name}">
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="3,2,3,0"
+                    FontWeight="Bold"
+                    FontSize="13"
+                    TextWrapping="NoWrap"
+                    TextTrimming="CharacterEllipsis"
+                    Text="{Binding Name}">
                 </TextBlock>
                 <StackPanel
-                        HorizontalAlignment="Right"
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Orientation="Horizontal">
+                    HorizontalAlignment="Right"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Orientation="Horizontal">
                     <TextBlock
-                            Margin="3,2,0,0"
-                            TextAlignment="Right"
-                            Text="#">
+                        Margin="3,2,0,0"
+                        TextAlignment="Right"
+                        Text="#">
                     </TextBlock>
                     <TextBlock
-                            Margin="1,2,3,0"
-                            TextAlignment="Right"
-                            Text="{Binding Adp}">
+                        Margin="1,2,3,0"
+                        TextAlignment="Right"
+                        Text="{Binding Adp}">
                     </TextBlock>
                 </StackPanel>
                 <TextBlock
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Margin="3,-2,3,2"
-                        TextAlignment="Left"
-                        Text="{Binding Converter={StaticResource PickInfoDisplayTextConverter}}">
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="3,-2,3,2"
+                    TextAlignment="Left"
+                    Text="{Binding Converter={StaticResource PickInfoDisplayTextConverter}}">
                 </TextBlock>
                 <TextBlock
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Margin="3,-2,3,2"
-                        TextAlignment="Right"
-                        Text="{Binding ByeWeek}">
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="3,-2,3,2"
+                    TextAlignment="Right"
+                    Text="{Binding ByeWeek}">
                 </TextBlock>
             </Grid>
         </Border>
@@ -274,7 +276,7 @@
             Orientation="Horizontal">
             <!-- Chart Team Label -->
             <TextBlock
-                Margin="5,2,0,2"
+                Margin="2,2,0,2"
                 Padding="0,2,0,0"
                 Width="75"
                 Height="21"
