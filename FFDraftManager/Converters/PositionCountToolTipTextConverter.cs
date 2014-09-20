@@ -7,7 +7,7 @@ using System.Text;
 using FFDraftManager.Models;
 
 namespace FFDraftManager.Converters {
-    class PositionCountToolTipTextConverter : IMultiValueConverter {
+    class PositionCountToolTipTextConverter : IValueConverter {
         /// <summary>
         /// Converts source values to a value for the binding target. The data binding engine calls this method when it propagates the values from source bindings to the binding target.
         /// </summary>
@@ -15,11 +15,13 @@ namespace FFDraftManager.Converters {
         /// A converted value.If the method returns null, the valid null value is used.A return value of <see cref="T:System.Windows.DependencyProperty" />.<see cref="F:System.Windows.DependencyProperty.UnsetValue" /> indicates that the converter did not produce a value, and that the binding will use the <see cref="P:System.Windows.Data.BindingBase.FallbackValue" /> if it is available, or else will use the default value.A return value of <see cref="T:System.Windows.Data.Binding" />.<see cref="F:System.Windows.Data.Binding.DoNothing" /> indicates that the binding does not transfer the value or use the <see cref="P:System.Windows.Data.BindingBase.FallbackValue" /> or the default value.
         /// </returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture) {
-            string name = values[0].ToString();
-            string position = values[1].ToString();
-            int count = 0;
-            if (int.TryParse(values[2].ToString(), out count)) {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
+            var team = value as FantasyTeam;
+            var name = team.TeamName;
+            var count = 0;
+            if (team != null) {
+                string position = parameter.ToString();
+                count = GetCount(position, team);
                 if (count == 1) {
                     return string.Format("{0} has {1} {2}", name, count, position);
                 }
@@ -28,7 +30,26 @@ namespace FFDraftManager.Converters {
             return "";
         }
 
-        public object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture) {
+        private int GetCount(string position, FantasyTeam team) {
+            switch (position) {
+                case "QB":
+                    return team.QBCount;
+                case "RB":
+                    return team.RBCount;
+                case "WR":
+                    return team.WRCount;
+                case "TE":
+                    return team.TECount;
+                case "DST":
+                    return team.DSTCount;
+                case "PK":
+                    return team.PKCount;
+                default:
+                    return 0;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
             throw new NotImplementedException();
         }
     }
