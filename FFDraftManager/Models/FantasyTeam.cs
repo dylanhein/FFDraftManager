@@ -15,6 +15,7 @@ namespace FFDraftManager.Models {
 
         private int draftOrder;
         private string teamName;
+        private string teamTitle;
         private bool isUserTeam;
         private ObservableCollection<Player> players;
 
@@ -44,6 +45,19 @@ namespace FFDraftManager.Models {
                 if (teamName != value) {
                     teamName = value;
                     RaisePropertyChanged("TeamName");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the team title.
+        /// </summary>
+        public string TeamTitle{
+            get { return teamTitle; }
+            set {
+                if (teamTitle != value) {
+                    teamTitle = value;
+                    RaisePropertyChanged("TeamTitle");
                 }
             }
         }

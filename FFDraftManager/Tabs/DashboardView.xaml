@@ -299,36 +299,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,5,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,5,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,5,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,5,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,5,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team1, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,5,0,2">
                     </Rectangle>
@@ -343,36 +349,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team2, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -387,36 +399,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team3, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -431,36 +449,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team4, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -475,36 +499,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team5, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -519,36 +549,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team6, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -563,36 +599,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team7, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -607,36 +649,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team8, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -651,36 +699,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team9, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -695,36 +749,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team10, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -739,36 +799,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team11, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,2">
                     </Rectangle>
@@ -783,36 +849,42 @@
                     <Rectangle
                         Fill="{StaticResource ResourceKey=QBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,5">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=RBGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,5">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=WRGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,5">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=TEGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,5">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=DSTGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,5">
                     </Rectangle>
                     <Rectangle
                         Fill="{StaticResource ResourceKey=PKGradient}"
                         Width="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12.PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                        ToolTipService.ToolTip="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Team12, Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                         Height="21"
                         Margin="0,2,0,5">
                     </Rectangle>

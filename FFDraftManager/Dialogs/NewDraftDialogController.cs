@@ -439,6 +439,7 @@ namespace FFDraftManager.Dialogs {
                 TeamName = teamName,
                 IsUserTeam = isUserTeam,
                 DraftOrder = draftOrder,
+                TeamTitle = "Team" + draftOrder,
                 Players = new ObservableCollection<Player>()
             });
         }
