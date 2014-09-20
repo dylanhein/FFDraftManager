@@ -17,11 +17,10 @@ namespace FFDraftManager.Converters {
         /// <exception cref="System.NotImplementedException"></exception>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
             var team = value as FantasyTeam;
-            var name = team.TeamName;
-            var count = 0;
             if (team != null) {
+                var name = team.TeamName;
                 string position = parameter.ToString();
-                count = GetCount(position, team);
+                var count = GetCount(position, team);
                 if (count == 1) {
                     return string.Format("{0} has {1} {2}", name, count, position);
                 }
