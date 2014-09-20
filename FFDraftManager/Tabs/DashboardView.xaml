@@ -9,7 +9,9 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition
-                Width="185"/>
+                Width="70"/>
+            <ColumnDefinition
+                Width="170"/>
             <ColumnDefinition
                 Width="Auto"/>
             <ColumnDefinition
@@ -17,11 +19,11 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition
-                Height="50"/>
+                Height="Auto"/>
             <RowDefinition
                 Height="*"/>
         </Grid.RowDefinitions>
-        <!-- My Draft Picks -->
+        <!-- Round # -->
         <TextBlock
             Grid.Row="0"
             Grid.Column="0"
@@ -30,13 +32,41 @@
             TextWrapping="NoWrap"
             FontWeight="Bold"
             FontSize="12"
-            Margin="0,20,0,10"
-            Text="My Draft Picks">
+            Margin="20,20,0,5"
+            Text="Round">
         </TextBlock>
         <ListBox
             Grid.Row="1"
             Grid.Column="0"
-            Margin="20,0,20,20"
+            Margin="20,0,0,20"
+            Background="{StaticResource ResourceKey=ChartGradient}"
+            HorizontalContentAlignment="Stretch"
+            ScrollViewer.CanContentScroll="False"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            ItemTemplate="{StaticResource ResourceKey=RoundItemTemplate}"
+            ItemsSource="{Binding Source={x:Static services:DraftStatusService.Instance}, Path=Rounds, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <!-- My Draft Picks -->
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            TextTrimming="CharacterEllipsis"
+            TextWrapping="NoWrap"
+            FontWeight="Bold"
+            FontSize="12"
+            Margin="0,20,20,5"
+            Text="My Draft Picks">
+        </TextBlock>
+        <ListBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="0,0,20,20"
             Background="{StaticResource ResourceKey=ChartGradient}"
             HorizontalContentAlignment="Stretch"
             ScrollViewer.CanContentScroll="False"
@@ -53,18 +83,18 @@
         <!-- Team Breakdown Chart -->
         <TextBlock
             Grid.Row="0"
-            Grid.Column="1"
+            Grid.Column="2"
             HorizontalAlignment="Center"
             TextTrimming="CharacterEllipsis"
             TextWrapping="NoWrap"
             FontWeight="Bold"
             FontSize="12"
-            Margin="0,20,0,10"
+            Margin="0,20,0,5"
             Text="Positional Breakdown">
         </TextBlock>
         <ListBox
             Grid.Row="1"
-            Grid.Column="1"
+            Grid.Column="2"
             BorderBrush="Gray"
             BorderThickness="1"
             VerticalAlignment="Top"
