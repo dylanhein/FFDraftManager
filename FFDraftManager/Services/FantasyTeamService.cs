@@ -70,7 +70,6 @@ namespace FFDraftManager.Services {
 
         public void AddTeam(FantasyTeam team) {
             Teams.Add(team);
-            RaisePropertyChanged("Teams");
             RaisePropertyChanged("Team1");
             RaisePropertyChanged("Team2");
             RaisePropertyChanged("Team3");
@@ -84,6 +83,7 @@ namespace FFDraftManager.Services {
             RaisePropertyChanged("Team11");
             RaisePropertyChanged("Team12");
             RaisePropertyChanged("UserTeam");
+            RaisePropertyChanged("Teams");
         }
         
         public void AddPlayer(FantasyTeam team, Player player) {

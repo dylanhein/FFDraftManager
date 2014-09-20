@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:models="clr-namespace:FFDraftManager.Models"
+                    xmlns:services="clr-namespace:FFDraftManager.Services"
                     xmlns:cons="clr-namespace:FFDraftManager.Converters">
 <!-- Converters -->
     <cons:PickInfoDisplayTextConverter
@@ -264,5 +265,99 @@
                 </TextBlock>
             </Grid>
         </Border>
+    </DataTemplate>
+    
+    <DataTemplate
+        x:Key="PositionalBreakdownItemTemplate"
+        DataType="{x:Type models:FantasyTeam}">
+        <StackPanel
+            Orientation="Horizontal">
+            <!-- Chart Team Label -->
+            <TextBlock
+                Margin="5,2,0,2"
+                Padding="0,2,0,0"
+                Width="75"
+                Height="21"
+                FontWeight="Bold"
+                FontSize="12"
+                VerticalAlignment="Center"
+                TextAlignment="Center"
+                Foreground="Azure"
+                Background="{StaticResource ResourceKey=ChartLabelGradient}"
+                Text="{Binding TeamName, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}">
+            </TextBlock>
+            <!-- Team Breakdown Bar -->
+            <StackPanel
+                Background="Transparent"
+                Width="360"
+                Orientation="Horizontal">
+                <Rectangle
+                    Fill="{StaticResource ResourceKey=QBGradient}"
+                    Width="{Binding QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Height="21"
+                    Margin="0,2,0,2">
+                    <Rectangle.ToolTip>
+                        <TextBlock
+                            Text="{Binding Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
+                        </TextBlock>
+                    </Rectangle.ToolTip>
+                </Rectangle>
+                <Rectangle
+                    Fill="{StaticResource ResourceKey=RBGradient}"
+                    Width="{Binding RBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Height="21"
+                    Margin="0,2,0,2">
+                    <Rectangle.ToolTip>
+                        <TextBlock
+                            Text="{Binding Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='RB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
+                        </TextBlock>
+                    </Rectangle.ToolTip>
+                </Rectangle>
+                <Rectangle
+                    Fill="{StaticResource ResourceKey=WRGradient}"
+                    Width="{Binding WRCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Height="21"
+                    Margin="0,2,0,2">
+                    <Rectangle.ToolTip>
+                        <TextBlock
+                            Text="{Binding Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='WR', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
+                        </TextBlock>
+                    </Rectangle.ToolTip>
+                </Rectangle>
+                <Rectangle
+                    Fill="{StaticResource ResourceKey=TEGradient}"
+                    Width="{Binding TECount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Height="21"
+                    Margin="0,2,0,2">
+                    <Rectangle.ToolTip>
+                        <TextBlock
+                            Text="{Binding Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='TE', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
+                        </TextBlock>
+                    </Rectangle.ToolTip>
+                </Rectangle>
+                <Rectangle
+                    Fill="{StaticResource ResourceKey=DSTGradient}"
+                    Width="{Binding DSTCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Height="21"
+                    Margin="0,2,0,2">
+                    <Rectangle.ToolTip>
+                        <TextBlock
+                            Text="{Binding Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='DST', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
+                        </TextBlock>
+                    </Rectangle.ToolTip>
+                </Rectangle>
+                <Rectangle
+                    Fill="{StaticResource ResourceKey=PKGradient}"
+                    Width="{Binding PKCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Height="21"
+                    Margin="0,2,0,2">
+                    <Rectangle.ToolTip>
+                        <TextBlock
+                            Text="{Binding Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='PK', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
+                        </TextBlock>
+                    </Rectangle.ToolTip>
+                </Rectangle>
+            </StackPanel>
+        </StackPanel>
     </DataTemplate>
 </ResourceDictionary>
