@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
                     xmlns:models="clr-namespace:FFDraftManager.Models"
                     xmlns:services="clr-namespace:FFDraftManager.Services"
                     xmlns:cons="clr-namespace:FFDraftManager.Converters">
@@ -387,7 +388,7 @@
             <!-- Team Breakdown Bar -->
             <StackPanel
                 Background="Transparent"
-                Width=""
+                Width="25"
                 Orientation="Horizontal">
                 <Rectangle
                     Fill="{StaticResource ResourceKey=QBGradient}"
@@ -400,6 +401,83 @@
                         </TextBlock>
                     </Rectangle.ToolTip>
                 </Rectangle>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+    
+    <!-- Lineup Item Template-->
+    <DataTemplate
+        x:Key="LineupItemTemplate"
+        DataType="{x:Type System:String}">
+        <StackPanel
+            HorizontalAlignment="Stretch"
+            Orientation="Horizontal">
+            <StackPanel
+                HorizontalAlignment="Left"
+                Width="50">
+                <Border
+                    Margin="-2,0,0,0"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    CornerRadius="3"
+                    HorizontalAlignment="Stretch">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+                                Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.Style>
+                            <Style
+                                TargetType="{x:Type Grid}">
+                                <Setter
+                                    Property="Margin"
+                                    Value="0,-1,0,-1">
+                                </Setter>
+                                <Setter
+                                    Property="MaxWidth"
+                                    Value="50">
+                                </Setter>
+                                <Setter
+                                    Property="HorizontalAlignment"
+                                    Value="Stretch">
+                                </Setter>
+                                <Setter
+                                    Property="VerticalAlignment"
+                                    Value="Stretch">
+                                </Setter>
+                                <Setter
+                                    Property="Background"
+                                    Value="{StaticResource RoundGradient}">
+                                </Setter>
+                            </Style>
+                        </Grid.Style>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Margin="0"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontWeight="Bold"
+                            FontSize="14"
+                            FontFamily="Arial"
+                            Foreground="White"
+                            TextWrapping="NoWrap"
+                            TextTrimming="CharacterEllipsis"
+                            Text="{Binding}">
+                        </TextBlock>
+                    </Grid>
+                </Border>
+            </StackPanel>
+            <StackPanel
+                Height="40"
+                Width="143"
+                Background="LightGray">
+                
             </StackPanel>
         </StackPanel>
     </DataTemplate>
