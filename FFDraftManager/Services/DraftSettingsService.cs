@@ -25,6 +25,7 @@ namespace FFDraftManager.Services {
         private int numberOfBenchPlayers;
         private bool picksTimed;
         private bool isPPR;
+        private List<string> allPositions;
         
         private static volatile DraftSettingsService instance;
         private static object syncRoot = new Object();
@@ -248,6 +249,19 @@ namespace FFDraftManager.Services {
                 if (isPPR != value) {
                     isPPR = value;
                     RaisePropertyChanged("IsPPR");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets all positions.
+        /// </summary>
+        public List<string> AllPositions {
+            get { return allPositions ?? (allPositions = new List<String>()); }
+            set {
+                if (allPositions != value) {
+                    allPositions = value;
+                    RaisePropertyChanged("AllPositions");
                 }
             }
         }

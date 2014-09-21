@@ -397,6 +397,7 @@ namespace FFDraftManager.Dialogs {
 
         private void InitializeDraftCommandExecuted(object sender) {
             BuildFantasyTeams();
+            BuildPositionList();
             DraftStatusService.Instance.AddRound();
             DraftStatusService.Instance.TeamOnClock = FantasyTeams.Teams[0];
             DraftStatusService.Instance.DraftInProgress = true;
@@ -442,6 +443,39 @@ namespace FFDraftManager.Dialogs {
                 TeamTitle = "Team" + draftOrder,
                 Players = new ObservableCollection<Player>()
             });
+        }
+
+        private void BuildPositionList() {
+            for (int i = 0; i < DraftSettings.NumberOfQbs; i++) {
+                DraftSettings.AllPositions.Add("QB");
+            }
+            for (int i = 0; i < DraftSettings.NumberOfRbs; i++) {
+                DraftSettings.AllPositions.Add("RB");
+            }
+            for (int i = 0; i < DraftSettings.NumberOfWrs; i++) {
+                DraftSettings.AllPositions.Add("WR");
+            }
+            for (int i = 0; i < DraftSettings.NumberOfWrRbs; i++) {
+                DraftSettings.AllPositions.Add("W/R");
+            }
+            for (int i = 0; i < DraftSettings.NumberOfWrRbTes; i++) {
+                DraftSettings.AllPositions.Add("W/R/T");
+            }
+            for (int i = 0; i < DraftSettings.NumberOfQbWrRbTes; i++) {
+                DraftSettings.AllPositions.Add("Q/W/R/T");
+            }
+            for (int i = 0; i < DraftSettings.NumberOfTes; i++) {
+                DraftSettings.AllPositions.Add("TE");
+            }
+            for (int i = 0; i < DraftSettings.NumberOfDefs; i++) {
+                DraftSettings.AllPositions.Add("DST");
+            }
+            for (int i = 0; i < DraftSettings.NumberOfPks; i++) {
+                DraftSettings.AllPositions.Add("K");
+            }
+            for (int i = 0; i < DraftSettings.NumberOfBenchPlayers; i++) {
+                DraftSettings.AllPositions.Add("Bench");
+            }
         }
 
         #endregion
