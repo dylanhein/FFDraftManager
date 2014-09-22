@@ -66,6 +66,12 @@
         <GradientStop Color="Black" Offset="0.1" />
         <GradientStop Color="Azure" Offset="2.5" />
     </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="EmptyPositionGradient" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="Azure" Offset="0.0" />
+        <GradientStop Color="Black" Offset="0.1" />
+        <GradientStop Color="Azure" Offset="2.5" />
+    </LinearGradientBrush>
     <!-- Data Templates-->
     
     <!-- Round Template -->
@@ -392,8 +398,8 @@
                 Orientation="Horizontal">
                 <Rectangle
                     Fill="{StaticResource ResourceKey=QBGradient}"
-                    Width="{Binding QBCount, Converter={StaticResource PostionCountToBarWidthConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
-                    Height="21"
+                    Width="25"
+                    Height="{Binding AdpSum, Converter={StaticResource AdpToBarHeightConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                     Margin="0,2,0,2">
                     <Rectangle.ToolTip>
                         <TextBlock
@@ -476,7 +482,7 @@
             <StackPanel
                 Height="40"
                 Width="143"
-                Background="LightGray">
+                Background="{StaticResource ResourceKey=EmptyPositionGradient}">
                 
             </StackPanel>
         </StackPanel>
