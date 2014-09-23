@@ -17,6 +17,7 @@ namespace FFDraftManager.Models {
         private string teamName;
         private string teamTitle;
         private bool isUserTeam;
+        priavte int adpSum;
         private ObservableCollection<Player> players;
 
         #endregion
@@ -94,6 +95,8 @@ namespace FFDraftManager.Models {
         public int TECount { get { return Players.Where(p => p.Position == PositionType.TE).Count(); } }
         public int DSTCount { get { return Players.Where(p => p.Position == PositionType.DST).Count(); } }
         public int PKCount { get { return Players.Where(p => p.Position == PositionType.PK).Count(); } }
+
+        public int AdpSum { get { return Players.Select(p => p.Adp).Sum(); } }
 
         #endregion
 
