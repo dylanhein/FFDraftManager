@@ -375,6 +375,7 @@
         x:Key="TeamAdpItemTemplate"
         DataType="{x:Type models:FantasyTeam}">
         <StackPanel
+            FlowDirection="RightToLeft"
             Orientation="Vertical"
             Width="25">
             <!-- Chart Team Label -->
@@ -386,6 +387,7 @@
                 FontWeight="Bold"
                 FontSize="12"
                 VerticalAlignment="Center"
+                
                 TextAlignment="Center"
                 Foreground="Azure"
                 Background="{StaticResource ResourceKey=ChartLabelGradient}"
@@ -399,11 +401,11 @@
                 <Rectangle
                     Fill="{StaticResource ResourceKey=QBGradient}"
                     Width="25"
-                    Height="{Binding AdpSum, Converter={StaticResource AdpToBarHeightConverter},UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Height="{Binding AdpSum, Converter={StaticResource AdpToBarHeightConverter}, ConverterParameter='1200', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
                     Margin="0,2,0,2">
                     <Rectangle.ToolTip>
                         <TextBlock
-                            Text="{Binding Converter={StaticResource PositionCountToolTipTextConverter}, ConverterParameter='QB', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
+                            Text="Team Adp">
                         </TextBlock>
                     </Rectangle.ToolTip>
                 </Rectangle>
