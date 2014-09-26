@@ -17,7 +17,6 @@ namespace FFDraftManager.Models {
         private string teamName;
         private string teamTitle;
         private bool isUserTeam;
-        priavte int adpSum;
         private ObservableCollection<Player> players;
 
         #endregion
