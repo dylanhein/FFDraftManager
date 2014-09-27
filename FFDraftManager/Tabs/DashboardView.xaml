@@ -141,22 +141,13 @@
                 HorizontalAlignment="Left"
                 Background="{StaticResource ResourceKey=ChartGradient}"
                 Padding="0,2,0,2"
-                Height="330"
+                MinHeight="100"
                 MaxHeight="321"
                 Width="440"
                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
                 ItemTemplate="{StaticResource ResourceKey=TeamAdpItemTemplate}"
                 ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Teams, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel
-                            VerticalAlignment="Stretch"
-                            HorizontalAlignment="Stretch"
-                            Orientation="Horizontal">
-                        </StackPanel>
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
             </ListBox>
         </StackPanel>
 
