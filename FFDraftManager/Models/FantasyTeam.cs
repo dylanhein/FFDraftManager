@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using FFDraftManager.Services;
 
 namespace FFDraftManager.Models {
     /// <summary>
@@ -94,8 +95,32 @@ namespace FFDraftManager.Models {
         public int TECount { get { return Players.Where(p => p.Position == PositionType.TE).Count(); } }
         public int DSTCount { get { return Players.Where(p => p.Position == PositionType.DST).Count(); } }
         public int PKCount { get { return Players.Where(p => p.Position == PositionType.PK).Count(); } }
-
         public int AdpSum { get { return Players.Select(p => p.Adp).Sum(); } }
+
+        public int AlternateRoundDraftOrder {
+            get {
+                return (draftOrder - (DraftSettingsService.Instance.NumberOfTeams + 1)) * -1;
+            }
+        }
+        
+        public int AdpPar { 
+            get {
+                int teamCount = DraftSettingsService.Instance.NumberOfTeams;
+                int currentPick = DraftStatusService.Instance.CurrentPick;
+                int currentRound = DraftStatusService.Instance.CurrentRound;
+                int count = 0;
+                for (int i = 1; i < currentRound; i++) {
+                    int previous = (currentRound - i) * teamCount;
+                    int roundDraftOrder = ((currentRound - i) % 2 != 0 ? draftOrder : AlternateRoundDraftOrder);
+                    count += previous + roundDraftOrder;
+                }
+                int currentOrder = ((currentRound % 2 != 0) ? draftOrder : AlternateRoundDraftOrder);
+                if (currentPick >= currentOrder) {
+                    count += currentOrder;
+                }
+                return count;
+            } 
+        } 
 
         #endregion
 

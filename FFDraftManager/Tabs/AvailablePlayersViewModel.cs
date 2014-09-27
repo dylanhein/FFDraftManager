@@ -247,8 +247,12 @@ namespace FFDraftManager.Tabs {
                 DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("TECount");
                 DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("DSTCount");
                 DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("PKCount");
-                DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("AdpSum");
                 FantasyTeamService.Instance.RaisePropertyChanged(DraftStatusService.Instance.TeamOnClock.TeamTitle);
+                DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("AdpPar");
+                DraftStatusService.Instance.TeamOnClock.RaisePropertyChanged("AdpSum");
+                while (DraftStatusService.Instance.AdpChartMax <= DraftStatusService.Instance.TeamOnClock.AdpSum) {
+                    DraftStatusService.Instance.AdpChartMax += 100;
+                }
             }
         }
 
