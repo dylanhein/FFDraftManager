@@ -15,6 +15,7 @@ namespace FFDraftManager.Services {
 
         private bool draftInProgress;
         private int secondsOnClock;
+        private int adpChartMax;
         private FantasyTeam teamOnClock;
         private ObservableCollection<Round> rounds;
 
@@ -99,6 +100,19 @@ namespace FFDraftManager.Services {
                 if (secondsOnClock != value) {
                     secondsOnClock = value;
                     RaisePropertyChanged("SecondsOnClock");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the adp chart max.
+        /// </summary>
+        public int AdpChartMax {
+            get { return adpChartMax; }
+            set {
+                if (adpChartMax != value) {
+                    adpChartMax = value;
+                    RaisePropertyChanged("AdpChartMax");
                 }
             }
         }

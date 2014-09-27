@@ -59,7 +59,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Constants\DraftDefaults.cs" />
-    <Compile Include="Converters\AdpToBarHeightConverter.cs" />
+    <Compile Include="Converters\AdpBarColorConverter.cs" />
+    <Compile Include="Converters\AdpChartTooltipTextConverter.cs" />
+    <Compile Include="Converters\AdpToBarWidthConverter.cs" />
     <Compile Include="Converters\NegativeVisibilityConverter.cs" />
     <Compile Include="Converters\PickInfoDisplayTextConverter.cs" />
     <Compile Include="Converters\PlayerDisplayTextConverter.cs" />
