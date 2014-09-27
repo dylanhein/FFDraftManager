@@ -26,7 +26,7 @@ namespace FFDraftManager.Converters {
             if (!int.TryParse(parameter.ToString(), out maxAdpShown)) {
                 return 0;
             }
-            return (adpSum / maxAdpShown) * AdpBarHeightInPixels;
+            return (double.Parse(adpSum.ToString()) / double.Parse(maxAdpShown.ToString())) * AdpBarHeightInPixels;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {

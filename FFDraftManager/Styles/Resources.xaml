@@ -11,6 +11,8 @@
         x:Key="PostionCountToBarWidthConverter"/>
     <cons:PositionCountToolTipTextConverter
         x:Key="PositionCountToolTipTextConverter"/>
+    <cons:AdpToBarHeightConverter
+        x:Key="AdpToBarHeightConverter"/>
 
 <!-- Gradients -->
     <LinearGradientBrush x:Key="RoundGradient" StartPoint="0.5,0" EndPoint="0.5,1">
@@ -375,19 +377,16 @@
         x:Key="TeamAdpItemTemplate"
         DataType="{x:Type models:FantasyTeam}">
         <StackPanel
-            FlowDirection="RightToLeft"
-            Orientation="Vertical"
-            Width="25">
+            Orientation="Horizontal">
             <!-- Chart Team Label -->
             <TextBlock
                 Margin="2,2,0,2"
                 Padding="0,2,0,0"
-                Width="25"
+                Width="75"
                 Height="21"
                 FontWeight="Bold"
                 FontSize="12"
                 VerticalAlignment="Center"
-                
                 TextAlignment="Center"
                 Foreground="Azure"
                 Background="{StaticResource ResourceKey=ChartLabelGradient}"
@@ -396,12 +395,11 @@
             <!-- Team Breakdown Bar -->
             <StackPanel
                 Background="Transparent"
-                Width="25"
                 Orientation="Horizontal">
                 <Rectangle
                     Fill="{StaticResource ResourceKey=QBGradient}"
-                    Width="25"
-                    Height="{Binding AdpSum, Converter={StaticResource AdpToBarHeightConverter}, ConverterParameter='1200', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Width="{Binding AdpSum, Converter={StaticResource AdpToBarHeightConverter}, ConverterParameter='1200', UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                    Height="21"
                     Margin="0,2,0,2">
                     <Rectangle.ToolTip>
                         <TextBlock
