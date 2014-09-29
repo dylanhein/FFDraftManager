@@ -115,7 +115,7 @@
                         FontSize="24"
                         FontFamily="Arial"
                         FontWeight="Bold"
-                        Text="{Binding Path=SelectedPlayer.Adp}">
+                        Text="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer.Adp, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
                     </TextBlock>
                 </StackPanel>
                 <!-- Position and Position Rank-->
@@ -132,7 +132,7 @@
                         FontFamily="Arial"
                         FontWeight="Bold"
                         Foreground="LightSteelBlue"
-                        Text="{Binding Path=SelectedPlayer.Position}">
+                        Text="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer.Position, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
                     </TextBlock>
                     <TextBlock
                         FontSize="16"
@@ -141,7 +141,7 @@
                         FontWeight="Bold"
                         VerticalAlignment="Bottom"
                         Foreground="LightSteelBlue"
-                        Text="{Binding Path=SelectedPlayer.PositionRank}">
+                        Text="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer.PositionRank, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
                     </TextBlock>
                 </StackPanel>
                 <!-- Player Name and Team-->
@@ -156,7 +156,7 @@
                         FontSize="30"
                         FontFamily="Arial"
                         FontWeight="Bold"
-                        Text="{Binding Path=SelectedPlayer.Name}">
+                        Text="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer.Name, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
                     </TextBlock>
                     <TextBlock
                         FontSize="16"
@@ -165,7 +165,7 @@
                         FontWeight="Bold"
                         VerticalAlignment="Bottom"
                         Foreground="LightSteelBlue"
-                        Text="{Binding Path=SelectedPlayer.Team}">
+                        Text="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer.Team, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
                     </TextBlock>
                 </StackPanel>
                 <!-- Draft Button -->
@@ -219,7 +219,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="10,0,10,20"
-            SelectedItem="{Binding Path=SelectedPlayer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+            SelectedItem="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=TwoWay}"
             ItemsSource="{Binding Source={x:Static services:PlayersService.Instance}, Path=AvailablePlayers, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             ItemTemplate="{StaticResource PlayerListItemTemplate}">
         </ListBox>
@@ -236,7 +236,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="10,0,10,20"
-            SelectedItem="{Binding Path=SelectedPlayer, Mode=TwoWay}"
+            SelectedItem="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=TwoWay}"
             ItemsSource="{Binding Source={x:Static services:PlayersService.Instance}, Path=AvailableQbs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             ItemTemplate="{StaticResource PlayerListItemTemplate}">
         </ListBox>
@@ -253,7 +253,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="10,0,10,20"
-            SelectedItem="{Binding Path=SelectedPlayer, Mode=TwoWay}"
+            SelectedItem="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=TwoWay}"
             ItemsSource="{Binding Source={x:Static services:PlayersService.Instance}, Path=AvailableRbs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             ItemTemplate="{StaticResource PlayerListItemTemplate}">
         </ListBox>
@@ -270,7 +270,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="10,0,10,20"
-            SelectedItem="{Binding Path=SelectedPlayer, Mode=TwoWay}"
+            SelectedItem="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=TwoWay}"
             ItemsSource="{Binding Source={x:Static services:PlayersService.Instance}, Path=AvailableWrs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             ItemTemplate="{StaticResource PlayerListItemTemplate}">
         </ListBox>
@@ -287,7 +287,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="10,0,10,20"
-            SelectedItem="{Binding Path=SelectedPlayer, Mode=TwoWay}"
+            SelectedItem="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=TwoWay}"
             ItemsSource="{Binding Source={x:Static services:PlayersService.Instance}, Path=AvailableTes, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             ItemTemplate="{StaticResource PlayerListItemTemplate}">
         </ListBox>
@@ -304,7 +304,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="10,0,10,20"
-            SelectedItem="{Binding Path=SelectedPlayer, Mode=TwoWay}"
+            SelectedItem="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=TwoWay}"
             ItemsSource="{Binding Source={x:Static services:PlayersService.Instance}, Path=AvailableWrRbs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             ItemTemplate="{StaticResource PlayerListItemTemplate}">
         </ListBox>
@@ -321,7 +321,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="10,0,10,20"
-            SelectedItem="{Binding Path=SelectedPlayer, Mode=TwoWay}"
+            SelectedItem="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=TwoWay}"
             ItemsSource="{Binding Source={x:Static services:PlayersService.Instance}, Path=AvailableWrRbTes, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             ItemTemplate="{StaticResource PlayerListItemTemplate}">
         </ListBox>
@@ -338,7 +338,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="10,0,10,20"
-            SelectedItem="{Binding Path=SelectedPlayer, Mode=TwoWay}"
+            SelectedItem="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=TwoWay}"
             ItemsSource="{Binding Source={x:Static services:PlayersService.Instance}, Path=AvailableDefs, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             ItemTemplate="{StaticResource PlayerListItemTemplate}">
         </ListBox>
@@ -355,7 +355,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="10,0,10,20"
-            SelectedItem="{Binding Path=SelectedPlayer, Mode=TwoWay}"
+            SelectedItem="{Binding Source={x:Static services:PlayersService.Instance}, Path=SelectedPlayer, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=TwoWay}"
             ItemsSource="{Binding Source={x:Static services:PlayersService.Instance}, Path=AvailablePks, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             ItemTemplate="{StaticResource PlayerListItemTemplate}">
         </ListBox>

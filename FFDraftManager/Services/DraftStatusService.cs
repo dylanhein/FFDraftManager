@@ -117,6 +117,9 @@ namespace FFDraftManager.Services {
             }
         }
 
+        /// <summary>
+        /// Gets or sets the team on clock.
+        /// </summary>
         public FantasyTeam TeamOnClock {
             get { return teamOnClock ?? ( teamOnClock = new FantasyTeam() ); }
             set {

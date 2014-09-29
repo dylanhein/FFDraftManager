@@ -17,7 +17,6 @@ namespace FFDraftManager.Tabs {
 
         #region Private Data Members
 
-        private Player selectedPlayer;
         private Player selectedQb;
         private Player selectedRb;
         private Player selectedWr;
@@ -41,10 +40,10 @@ namespace FFDraftManager.Tabs {
         /// Gets or sets the selected player.
         /// </summary>
         public Player SelectedPlayer {
-            get { return selectedPlayer; }
+            get { return PlayersService.Instance.SelectedPlayer ?? (PlayersService.Instance.SelectedPlayer = PlayersService.Instance.AvailablePlayers.FirstOrDefault()); }
             set {
-                if (selectedPlayer != value) {
-                    selectedPlayer = value;
+                if (PlayersService.Instance.SelectedPlayer != value) {
+                    PlayersService.Instance.SelectedPlayer = value;
                     RaisePropertyChanged("SelectedPlayer");
                 }
             }
@@ -261,7 +260,7 @@ namespace FFDraftManager.Tabs {
         /// </summary>
         private void RemoveSelectedPlayerFromPositionList() {
             if (SelectedPlayer != null) {
-                var player = selectedPlayer;
+                var player = SelectedPlayer;
                 switch (SelectedPlayer.Position) {
                     case PositionType.QB:
                         Players.AvailableQbs.Remove(Players.AvailableQbs.FirstOrDefault(rb => rb.Name == player.Name && rb.PositionRank == player.PositionRank));
