@@ -32,6 +32,7 @@ namespace FFDraftManager.Services {
         private ObservableCollection<Player> availableDefs;
         private ObservableCollection<Player> availableWrRbs;
         private ObservableCollection<Player> availableWrRbTes;
+        private Player selectedPlayer;
 
         #endregion
 
@@ -109,6 +110,19 @@ namespace FFDraftManager.Services {
                     RaisePropertyChanged("AvailableDefs");
                     RaisePropertyChanged("AvailableWrRbs");
                     RaisePropertyChanged("AvailableWrRbTes");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the selected player.
+        /// </summary>
+        public Player SelectedPlayer {
+            get { return selectedPlayer; }
+            set {
+                if (selectedPlayer != value) {
+                    selectedPlayer = value;
+                    RaisePropertyChanged("SelectedPlayer");
                 }
             }
         }

@@ -89,6 +89,7 @@ namespace FFDraftManager {
             DraftInitialized = true;
             Players.SetPlayerList();
             Players.SetAvailablePlayers();
+            PlayersService.Instance.SelectedPlayer = PlayersService.Instance.AvailablePlayers.FirstOrDefault();
             DraftInProgress = true;
         }
 
