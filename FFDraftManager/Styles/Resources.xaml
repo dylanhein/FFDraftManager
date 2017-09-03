@@ -17,8 +17,10 @@
         x:Key="AdpChartTooltipTextConverter"/>
     <cons:AdpBarColorConverter
         x:Key="AdpBarColorConverter"/>
+    <cons:TabControlRowConverter
+        x:Key="TabControlRowConverter"/>
 
-<!-- Gradients -->
+    <!-- Gradients -->
     <LinearGradientBrush x:Key="RoundGradient" StartPoint="0.5,0" EndPoint="0.5,1">
         <GradientStop Color="Azure" Offset="0.0" />
         <GradientStop Color="Black" Offset="0.1" />
@@ -176,8 +178,6 @@
                     <ColumnDefinition
                         Width="*"
                         MaxWidth="110"/>
-                    <ColumnDefinition
-                        Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition
@@ -259,42 +259,21 @@
                 <TextBlock
                     Grid.Row="0"
                     Grid.Column="0"
-                    Margin="3,2,3,0"
+                    MaxWidth="105"
+                    Margin="3,2,2,0"
                     FontWeight="Bold"
                     FontSize="13"
                     TextWrapping="NoWrap"
                     TextTrimming="CharacterEllipsis"
                     Text="{Binding Name}">
                 </TextBlock>
-                <StackPanel
-                    HorizontalAlignment="Right"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Orientation="Horizontal">
-                    <TextBlock
-                        Margin="3,2,0,0"
-                        TextAlignment="Right"
-                        Text="#">
-                    </TextBlock>
-                    <TextBlock
-                        Margin="1,2,3,0"
-                        TextAlignment="Right"
-                        Text="{Binding Adp}">
-                    </TextBlock>
-                </StackPanel>
                 <TextBlock
                     Grid.Row="1"
                     Grid.Column="0"
                     Margin="3,-2,3,2"
                     TextAlignment="Left"
+                    FontSize="9"
                     Text="{Binding Converter={StaticResource PickInfoDisplayTextConverter}}">
-                </TextBlock>
-                <TextBlock
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Margin="3,-2,3,2"
-                    TextAlignment="Right"
-                    Text="{Binding ByeWeek}">
                 </TextBlock>
             </Grid>
         </Border>

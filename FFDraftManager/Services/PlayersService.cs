@@ -12,8 +12,8 @@ namespace FFDraftManager.Services {
         #region Private Data Members
 
         private static readonly string assetsFolderName = "Assets";
-        private static readonly string standardPlayersFileName = "StandardRankings2014.csv";
-        private static readonly string pprPlayersFileName = "PprRankings2014.csv";
+        private static readonly string standardPlayersFileName = "StandardRankings2017Updated.csv";
+        private static readonly string pprPlayersFileName = "PprRankings2017.csv";
         private static readonly string standardPlayersFilePath = Path.Combine(Directory.GetCurrentDirectory().ToString(), assetsFolderName, standardPlayersFileName);
         private static readonly string pprPlayersFilePath = Path.Combine(Directory.GetCurrentDirectory().ToString(), assetsFolderName, pprPlayersFileName);
         private static volatile PlayersService instance;

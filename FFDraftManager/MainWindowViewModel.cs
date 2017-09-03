@@ -25,6 +25,7 @@ namespace FFDraftManager {
         private Window window;
         private bool draftInProgress;
         private bool draftInitialized;
+        private bool isExpanded;
         private ICommand startNewDraftCommand;
         private ICommand undoLastDraftPickCommand;
         
@@ -58,6 +59,19 @@ namespace FFDraftManager {
                 if (draftInitialized != value) {
                     draftInitialized = value;
                     RaisePropertyChanged("DraftInitialized");
+                }
+            }
+        }
+
+        public bool IsExpanded
+        {
+            get { return isExpanded; }
+            set
+            {
+                if (isExpanded != value)
+                {
+                    isExpanded = value;
+                    RaisePropertyChanged("IsExpanded");
                 }
             }
         }
@@ -130,6 +144,12 @@ namespace FFDraftManager {
             DraftStatusService.Instance.RaisePropertyChanged("CurrentOverallPick");
             DraftStatusService.Instance.RaisePropertyChanged("CurrentPick");
             DraftStatusService.Instance.RaisePropertyChanged("CurrentRound");
+        }
+
+        private void ExpandOrCollapseTabs(object sender)
+        {
+            IsExpanded = !isExpanded;
+            RaisePropertyChanged("IsExpanded");
         }
 
         #endregion

@@ -67,6 +67,7 @@
     <Compile Include="Converters\PlayerDisplayTextConverter.cs" />
     <Compile Include="Converters\PositionCountToolTipTextConverter.cs" />
     <Compile Include="Converters\PostionCountToBarWidthConverter.cs" />
+    <Compile Include="Converters\TabControlRowConverter.cs" />
     <Compile Include="Dialogs\NewDraftDialog.xaml.cs">
       <DependentUpon>NewDraftDialog.xaml</DependentUpon>
     </Compile>
@@ -155,6 +156,8 @@
     <Content Include="Assets\StandardRankings2014.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Assets\StandardRankings2017.csv" />
+    <None Include="Assets\StandardRankings2017Updated.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

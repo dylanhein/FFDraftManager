@@ -80,6 +80,10 @@
                     <MenuItem 
                         Header="_Available Players"
                         Padding="5,2,5,3"/>
+                    <MenuItem 
+                        Header="Expand/Collapse _Tab"
+                        Command="{Binding Path=ExpandOrCollapseTabs}"
+                        Padding="5,2,5,3"/>
                 </MenuItem>
                 <!-- Help Menu -->
                 <MenuItem 
@@ -282,7 +286,8 @@
         </Border>
         <!-- Main Tab Control -->            
         <TabControl
-            Grid.Row="2"
+            Grid.Row="{Binding Path=IsExpanded, Converter={StaticResource TabControlRowConverter}, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}"
+            Grid.RowSpan="3"
             Margin="10"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch">

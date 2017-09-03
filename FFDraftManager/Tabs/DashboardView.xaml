@@ -119,37 +119,34 @@
         </ListBox>
 
         <!-- Team ADP Chart -->
-        <StackPanel
-            Grid.Row="3"
-            Grid.Column="2"
-            VerticalAlignment="Bottom"
-            Margin="0,0,0,20"
-            Width="440">
-            <TextBlock
-                HorizontalAlignment="Center"
-                TextTrimming="CharacterEllipsis"
-                TextWrapping="NoWrap"
-                FontWeight="Bold"
-                FontSize="12"
-                Margin="0,20,0,5"
-                Text="Team ADP Sum">
-            </TextBlock>
-            <ListBox
-                BorderBrush="Gray"
-                BorderThickness="1"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Background="{StaticResource ResourceKey=ChartGradient}"
-                Padding="0,2,0,2"
-                MinHeight="100"
-                MaxHeight="321"
-                Width="440"
-                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                ItemTemplate="{StaticResource ResourceKey=TeamAdpItemTemplate}"
-                ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Teams, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
-            </ListBox>
-        </StackPanel>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="3"
+            HorizontalAlignment="Center"
+            TextTrimming="CharacterEllipsis"
+            TextWrapping="NoWrap"
+            FontWeight="Bold"
+            FontSize="12"
+            Margin="0,20,0,5"
+            Text="Team ADP Sum">
+        </TextBlock>
+        <ListBox
+            Grid.Row="1"
+            Grid.Column="3"
+            BorderBrush="Gray"
+            BorderThickness="1"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Background="{StaticResource ResourceKey=ChartGradient}"
+            Padding="0,2,0,2"
+            MinHeight="100"
+            MaxHeight="321"
+            Width="440"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            ItemTemplate="{StaticResource ResourceKey=TeamAdpItemTemplate}"
+            ItemsSource="{Binding Source={x:Static services:FantasyTeamService.Instance}, Path=Teams, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, Mode=OneWay}">
+        </ListBox>
 
         <!-- My Lineup -->
         <TextBlock
